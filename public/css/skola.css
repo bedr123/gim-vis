@@ -1,0 +1,28 @@
+.main {
+  max-width: 1150px;
+}
+
+.main h2{
+  font-family: 'Roboto', 'serif';
+  margin: 1rem ;
+
+
+}
+
+.main p{
+  margin:2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
+  font-family: 'Roboto', 'serif';
+}
+
+.main{  border: 1px solid  rgb(255, 255, 255); padding: 1.25em 0; }
+
+.main { margin-bottom: .5em; }
+
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 47.5em ) {
+  .main { margin-right: 19.5em; }  
+}
