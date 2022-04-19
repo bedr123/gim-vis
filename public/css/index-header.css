@@ -34,6 +34,11 @@
 .inView .logo-span {
   color: black;
 }
+
 .inView .item {
   color: black;
+}
+
+.inView .item::before {
+  background-color: black;
 }
