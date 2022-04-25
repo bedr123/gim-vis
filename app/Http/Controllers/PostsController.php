@@ -82,8 +82,16 @@ class PostsController extends Controller
         $data = $request->validated();
 
         if ($request->hasFile('slika')) {
+            $imgRealPath = $request->slika->getRealPath();
+
             $newImageName = Str::random(50) . "." . $request->slika->extension();
+
+            Image::make($imgRealPath)->fit(368,250)->save('storage/novosti/thumb/' . $newImageName);
+
+            $data['thumb'] = config('app.url') . '/storage/novosti/thumb/' . $newImageName;
+
             $request->slika->move(storage_path('app/public/novosti'), $newImageName);
+
             $data['slika'] = config('app.url') . '/storage/novosti/' . $newImageName;
         }
         

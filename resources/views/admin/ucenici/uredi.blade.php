@@ -54,13 +54,13 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Uredi uposlenikove podatke</h4>
-                            <span class="ml-1">Uposlenici</span>
+                            <h4>Uredi učenikove podatke</h4>
+                            <span class="ml-1">Učenici</span>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Uposlenici</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Učenici</a></li>
                             <li class="breadcrumb-item active"><a href="javascript:void(0)">Uredi</a></li>
                         </ol>
                     </div>
@@ -74,7 +74,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form method="POST" action="{{ config('app.url') . '/admin/uposlenici/' . $employee->id }}" enctype='multipart/form-data'>
+                                    <form method="POST" action="{{ config('app.url') . '/admin/ucenici/' . $student->id }}" enctype='multipart/form-data'>
                                         @method('PUT')
                                         @csrf
                                         <div class="form-group">
@@ -117,7 +117,7 @@
                                                 <select name="kategorija" class="select2-with-label-single js-states d-block form-control input-default" id="id_label_single">
                                                     <option disabled value>izaberi kategorija</option>
                                                     <option {{ $student->kategorija === 'talentovani_ucenici_gimnazije' ? 'selected' : '' }} value="talentovani_ucenici_gimnazije">Talentovani ucenici gimnazije</option>
-                                                    <option value=""></option>
+                                                    <option {{ $student->kategorija === 'alumni_gimnazije' ? 'selected' : '' }} value="alumni_gimnazije">Alumni Gimnazije</option>
                                                 </select>
                                                 @error('kategorija') <span class="text-danger">{{ $message }}</span> @enderror
                                             </label>

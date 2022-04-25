@@ -13,6 +13,7 @@ class Student extends Model
         'ime_i_prezime',
         'slika',
         'informacije',
-        'kategorija'
+        'kategorija',
+        'thumb'
     ];
 }

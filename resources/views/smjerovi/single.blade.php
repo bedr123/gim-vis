@@ -26,8 +26,10 @@
   <section class="about-section">   
     <div class="main">
       <h3>{{ $direction->naziv }}</h3>
-      {!! $direction->kontent !!}
-
+      <div>
+        {!! $direction->kontent !!}
+      </div>
+      @if(!$direction->images()->get()->isEmpty())
       <h3>Galerija</h3>
 
       <div class="card-body" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; grid-template-rows: auto; grid-gap: 10px;">
@@ -39,6 +41,7 @@
              
           @endforeach
       </div>
+      @endif
     </div>
     
   </div>

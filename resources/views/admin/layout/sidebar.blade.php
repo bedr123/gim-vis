@@ -21,7 +21,7 @@
             <li><a href="{{ config('app.url') . '/admin/ucenici' }}" aria-expanded="false"><i class="icon icon-globe-2"></i><span
                         class="nav-text">Učenici</span></a></li>
             <li><a href="{{ config('app.url') . '/admin/galerija' }}" aria-expanded="false"><i class="icon icon-globe-2"></i><span
-                        class="nav-text">Učenici</span></a></li>
+                        class="nav-text">Galerija</span></a></li>
             <li class="nav-label">Forms</li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="icon icon-form"></i><span class="nav-text">Forms</span></a>

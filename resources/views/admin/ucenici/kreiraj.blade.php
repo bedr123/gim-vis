@@ -54,13 +54,13 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Dodaj uposlenika</h4>
-                            <span class="ml-1">Uposlenici</span>
+                            <h4>Dodaj učenika</h4>
+                            <span class="ml-1">Učenici</span>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Uposlenici</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Učenici</a></li>
                             <li class="breadcrumb-item active"><a href="javascript:void(0)">Kreiraj</a></li>
                         </ol>
                     </div>
@@ -80,7 +80,7 @@
                                             <label for="" class="select2-container">
                                                 Ime i prezime <br>
 
-                                                <input type="text" name="ime_i_prezime" class="form-control input-default " placeholder="Ime i prezime profesora">
+                                                <input type="text" name="ime_i_prezime" class="form-control input-default " placeholder="Ime i prezime učenika">
                                                 @error('ime_i_prezime') <span class="text-danger">{{ $message }}</span> @enderror
                                             </label>
                                         </div>
@@ -112,9 +112,9 @@
                                                 Kategorija <br>
             
                                                 <select name="kategorija" class="select2-with-label-single js-states d-block form-control input-default" id="id_label_single">
-                                                    <option disabled selected value>izaberi kategorija</option>
+                                                    <option disabled selected value>izaberi kategoriju</option>
                                                     <option value="talentovani_ucenici_gimnazije">Talentovani ucenici gimnazije</option>
-                                                    <option value=""></option>
+                                                    <option value="alumni_gimnazije">Alumni gimnazije</option>
                                                 </select>
                                                 @error('kategorija') <span class="text-danger">{{ $message }}</span> @enderror
                                             </label>

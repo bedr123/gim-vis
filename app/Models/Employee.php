@@ -15,7 +15,8 @@ class Employee extends Model
         'informacije',
         'uloga',
         'opis_posla',
-        'kategorija'
+        'kategorija',
+        'thumb'
     ];
 
     public function posts()

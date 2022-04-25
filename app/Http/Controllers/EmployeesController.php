@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class EmployeesController extends Controller
 {
@@ -26,8 +27,16 @@ class EmployeesController extends Controller
         $data = $request->validated();
 
         if ($request->hasFile('slika')) {
+            $imgRealPath = $request->slika->getRealPath();
+
             $newImageName = Str::random(50) . "." . $request->slika->extension();
+
+            Image::make($imgRealPath)->fit(250,350)->save('storage/uposlenici/thumb/' . $newImageName);
+
+            $data['thumb'] = config('app.url') . '/storage/uposlenici/thumb/' . $newImageName;
+
             $request->slika->move(storage_path('app/public/uposlenici'), $newImageName);
+
             $data['slika'] = config('app.url') . '/storage/uposlenici/' . $newImageName;
         }
 
@@ -59,8 +68,16 @@ class EmployeesController extends Controller
         $data = $request->validated();
 
         if ($request->hasFile('slika')) {
+            $imgRealPath = $request->slika->getRealPath();
+
             $newImageName = Str::random(50) . "." . $request->slika->extension();
+
+            Image::make($imgRealPath)->fit(250,350)->save('storage/uposlenici/thumb/' . $newImageName);
+
+            $data['thumb'] = config('app.url') . '/storage/uposlenici/thumb/' . $newImageName;
+
             $request->slika->move(storage_path('app/public/uposlenici'), $newImageName);
+
             $data['slika'] = config('app.url') . '/storage/uposlenici/' . $newImageName;
         }
 

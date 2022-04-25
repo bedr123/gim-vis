@@ -9,6 +9,7 @@ use App\Http\Resources\IndexSliderResource;
 use App\Http\Resources\CollectionResource;
 use App\Http\Requests\StoreSlideRequest;
 use App\HTTP\Requests\UpdateSlideRequest;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class IndexSliderController extends Controller
 {
@@ -65,8 +66,16 @@ class IndexSliderController extends Controller
         $data = $request->validated();
 
         if ($request->hasFile('slika')) {
+            $imgRealPath = $request->slika->getRealPath();
+
             $newImageName = Str::random(50) . "." . $request->slika->extension();
-            $request->slika->move(storage_path('app/public/slajdovi'), $newImageName);
+    
+            Image::make($imgRealPath)->fit(368,250)->save('storage/slajdovi/thumb/' . $newImageName);
+    
+            $data['thumb'] = config('app.url') . '/storage/slajdovi/thumb/' . $newImageName;
+    
+            $request->slika->move(storage_path('app/public/slajdovi'), $newImageName);  
+            
             $data['slika'] = config('app.url') . '/storage/slajdovi/' . $newImageName;
         }
 
