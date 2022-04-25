@@ -125,7 +125,7 @@
         @foreach($posts as $post)
           <div class="novosti__box">
             <div class="novosti__image">
-              <a href="{{ config('app.url') . '/novosti/' . $post->slug }}"><img src="{{ $post->slika }}" /></a>
+              <a href="{{ config('app.url') . '/novosti/' . $post->slug }}"><img src="{{ $post->thumb }}" /></a>
             </div>
             <div class="novosti__text-content">
               <h4>{{ $post->category->naziv }}</h4>

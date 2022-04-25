@@ -16,6 +16,7 @@ class IndexSlider extends Model
         'opis',
         'slika',
         'redoslijed',
-        'link'
+        'link',
+        'thumb'
     ];
 }

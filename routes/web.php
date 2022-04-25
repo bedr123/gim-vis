@@ -13,6 +13,7 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\GalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,7 +55,6 @@ Route::prefix('admin')->group(function () {
 
         Route::get('slajdovi', [IndexSliderController::class, 'index']);
         Route::get('slajdovi/kreiraj', [IndexSliderController::class, 'create']);
-        Route::get('slajdovi/{slideId}', [IndexSliderController::class, 'show']);
         Route::post('slajdovi', [IndexSliderController::class, 'store']);
         Route::get('slajdovi/{slideId}/uredi', [IndexSliderController::class, 'edit']);
         Route::put('slajdovi/{slideId}', [IndexSliderController::class, 'update']);
@@ -62,7 +62,6 @@ Route::prefix('admin')->group(function () {
 
         Route::get('smjerovi', [DirectionsController::class, 'index']);
         Route::get('smjerovi/kreiraj', [DirectionsController::class, 'create']);
-        Route::get('smjerovi/{directionId}', [DirectionsController::class, 'show']);
         Route::post('smjerovi', [DirectionsController::class, 'store']);
         Route::get('smjerovi/{directionId}/uredi', [DirectionsController::class, 'edit']);
         Route::put('smjerovi/{directionId}', [DirectionsController::class, 'update']);
@@ -70,7 +69,6 @@ Route::prefix('admin')->group(function () {
 
         Route::get('novosti', [PostsController::class, 'index']);
         Route::get('novosti/kreiraj', [PostsController::class, 'create']);
-        Route::get('novosti/{postId}', [PostsController::class, 'show']);
         Route::post('novosti', [PostsController::class, 'store']);
         Route::get('novosti/{postId}/uredi', [PostsController::class, 'edit']);
         Route::put('novosti/{postId}', [PostsController::class, 'update']);
@@ -85,7 +83,6 @@ Route::prefix('admin')->group(function () {
         Route::get('uposlenici/kreiraj', [EmployeesController::class, 'create']);
         Route::post('uposlenici', [EmployeesController::class, 'store']);
         Route::get('uposlenici/{employeeId}/uredi', [EmployeesController::class, 'edit']);
-        Route::get('uposlenici/{employeeId}', [EmployeesController::class, 'show']);
         Route::put('uposlenici/{employeeId}', [EmployeesController::class, 'update']);
         Route::delete('uposlenici/{employeeId}', [EmployeesController::class, 'delete']);
 
@@ -93,9 +90,13 @@ Route::prefix('admin')->group(function () {
         Route::get('ucenici/kreiraj', [StudentsController::class, 'create']);
         Route::post('ucenici', [StudentsController::class, 'store']);
         Route::get('ucenici/{studentId}/uredi', [StudentsController::class, 'edit']);
-        Route::get('ucenici/{studentId}', [StudentsController::class, 'show']);
         Route::put('ucenici/{studentId}', [StudentsController::class, 'update']);
         Route::delete('ucenici/{studentId}', [StudentsController::class, 'delete']);
+
+        Route::get('galerija', [GalleryController::class, 'index']);
+        Route::get('galerija/{id}', [GalleryController::class, 'showGallery']);
+        Route::post('galerija/{id}', [GalleryController::class, 'store']);
+        Route::delete('galerija/{id}/slika/{imageId}', [GalleryController::class, 'deleteImage']);
 
         Route::post('odjava', [LoginController::class, 'logout'])->name('logout');
     });

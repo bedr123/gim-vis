@@ -33,9 +33,15 @@ class IndexSliderController extends Controller
             $oldSlide->delete();
         }
 
+        $imgRealPath = $request->slika->getRealPath();
+
         $newImageName = Str::random(50) . "." . $request->slika->extension();
 
-        $request->slika->move(storage_path('app/public/slajdovi'), $newImageName);
+        Image::make($imgRealPath)->fit(368,250)->save('storage/slajdovi/thumb/' . $newImageName);
+
+        $data['thumb'] = config('app.url') . '/storage/slajdovi/thumb/' . $newImageName;
+
+        $request->slika->move(storage_path('app/public/slajdovi'), $newImageName);  
         
         $data['slika'] = config('app.url') . '/storage/slajdovi/' . $newImageName;
 
@@ -64,7 +70,10 @@ class IndexSliderController extends Controller
             $data['slika'] = config('app.url') . '/storage/slajdovi/' . $newImageName;
         }
 
-        $orderExists = IndexSlider::where('redoslijed', $request->redoslijed)->first();
+        if ($request->redoslijed)
+            $orderExists = IndexSlider::where('redoslijed', $request->redoslijed)->first();
+        else
+            $orderExists = '';
 
         if ($orderExists && $orderExists != $slide) {
             $orderExists->update([

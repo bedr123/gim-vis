@@ -13,7 +13,8 @@ class DirectionGallery extends Model
 
     protected $fillable = [
         'direction_id',
-        'slika'
+        'slika',
+        'thumb'
     ];
 
     public function direction()
