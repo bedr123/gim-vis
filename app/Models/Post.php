@@ -16,7 +16,8 @@ class Post extends Model
         'slika',
         'category_id',
         'kontent',
-        'autor'
+        'autor',
+        'thumb'
     ];
 
     public function sluggable(): array

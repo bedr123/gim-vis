@@ -28,7 +28,7 @@ class StoreSlideRequest extends FormRequest
             'opis' => 'sometimes|string',
             'slika' => 'required|mimes:png,jpeg,jpg',
             'link' => 'sometimes|url',
-            'redoslijed' => 'required|integer'
+            'redoslijed' => 'required|integer|in: 1, 2, 3, 4, 5'
         ];
     }
 }

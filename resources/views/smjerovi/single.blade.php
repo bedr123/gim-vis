@@ -27,10 +27,24 @@
     <div class="main">
       <h3>{{ $direction->naziv }}</h3>
       {!! $direction->kontent !!}
+
+      <h3>Galerija</h3>
+
+      <div class="card-body" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; grid-template-rows: auto; grid-gap: 10px;">
+          @foreach($direction->images()->get() as $image)
+          
+              <div class="image-box" style="background-image: url({{ $image->thumb }})">
+                  <div class="box-image"></div> 
+              </div>
+             
+          @endforeach
+      </div>
     </div>
+    
   </div>
   </section>
 @include('layout.footer')
-  <script src="app.js"></script>
+  <script src="{{ asset('js/app.js') }}"></script>
+  <script src="{{ asset('js/open-image.js') }}"></script>
 </body>
 </html>
