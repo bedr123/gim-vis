@@ -1,26 +1,9 @@
 .navbar {
-    position: absolute;
     background: none;
 }
 
 .navbar.active {
     background-color: #fff;
-}
-
-.sticky {
-    background: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(0, 0px);
-}
-
-.inView {
-    position: fixed;
-    height: 100px;
-    background-color: white;
-    transform: translate(0, 0);
-    transition: all 500ms ease-out;
 }
 
 .logo-span {
@@ -34,15 +17,15 @@
     background-color: white;
 }
 
-.inView .logo-span {
+.active .logo-span {
     color: black;
 }
 
-.inView .item {
+.active .item {
     color: black;
 }
 
-.inView .item::before {
+.active .item::before {
     background-color: black;
 }
 
