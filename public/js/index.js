@@ -9,7 +9,7 @@ hamburgerMenu.addEventListener("click", () => {
         bar.classList.toggle("active");
     });
     menu.classList.toggle("active");
-    navbar.classList.toggle("active");
+    navbar.classList.toggle("active2");
 });
 
 // DROPDOWN

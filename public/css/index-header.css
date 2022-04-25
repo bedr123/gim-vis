@@ -6,6 +6,10 @@
     background-color: #fff;
 }
 
+.navbar.active2 {
+    background-color: #fff !important;
+}
+
 .logo-span {
     color: white;
 }

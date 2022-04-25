@@ -27,7 +27,6 @@
       </div>
       </div>
       <div class="products">
-        <p class="heading"></p>
         <div class="gallery-image">
           @foreach($employees as $employee)
             <div class="img-box">

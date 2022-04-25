@@ -12,6 +12,7 @@
       </svg>        
       <div class="footer-distributed">
         <div class="footer-left">
+          <img src="{{ asset('assets/images/logo u boji.png') }}" alt="logo"/>
           <h3 class="footer-logo">Gimnazija "Visoko"</h3>
         </div>
         <div class="footer-center">

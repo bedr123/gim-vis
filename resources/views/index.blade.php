@@ -112,7 +112,7 @@
             sticati znanja i sposobnosti za nastavak obrazovanja na
             visokoškolskim ustanovama.
           </p>
-          <a href="#" class="btn">Više</a>
+          <a href="#" class="btn">Pročitaj Više</a>
         </div>
       </div>
     </section>

@@ -22,7 +22,7 @@
         <li class="navbar__item">
           <button class="item">Nastava</button>
           <ul class="dropdown">
-            <li><a href="#">Kalendar</a></li>
+            <li><a href="{{ config('app.url') . '/kalendar' }}">Kalendar</a></li>
             <li><a href="#">Nastavni planovi</a></li>
             <li><a href="#">Raspored</a></li>
             <li><a href="#">Aktivi</a></li>

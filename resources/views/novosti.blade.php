@@ -100,6 +100,17 @@
           </div>
         </div>
       </div>
+      <div class="pagination">
+        <button class="pag-btn">Prethodna</button>
+        <div class="pag-container">
+          <span class="pag-item active">1</span>
+          <span class="pag-item">2</span>
+          <span class="pag-item">3</span>
+          <span class="pag-item">...</span>
+          <span class="pag-item">7</span>
+        </div>
+        <button class="pag-btn">Sljedeća</button>
+      </div>
     </section>
     <!-- NOVOSTI SECTION END -->
 
