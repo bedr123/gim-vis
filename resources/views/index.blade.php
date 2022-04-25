@@ -128,7 +128,7 @@
               <a href="{{ config('app.url') . '/novosti/' . $post->slug }}"><img src="{{ $post->thumb }}" /></a>
             </div>
             <div class="novosti__text-content">
-              <h4>{{ $post->category->naziv }}</h4>
+              <h4>Novost</h4>
               <a href="{{ config('app.url') . '/novosti/' . $post->slug }}"
                 >{{ $post->naslov }}</a
               >

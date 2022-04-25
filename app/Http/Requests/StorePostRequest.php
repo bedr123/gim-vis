@@ -26,7 +26,6 @@ class StorePostRequest extends FormRequest
         return [
             'naslov' => 'required|string',
             'slika' => 'required|mimes:png,jpeg,jpg',
-            'category_id' => 'required|integer',
             'kontent' => 'required',
             'autor' => 'required|string',
             'employees' => ''

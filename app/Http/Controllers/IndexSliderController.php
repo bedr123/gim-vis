@@ -38,7 +38,7 @@ class IndexSliderController extends Controller
 
         $newImageName = Str::random(50) . "." . $request->slika->extension();
 
-        Image::make($imgRealPath)->fit(368,250)->save('storage/slajdovi/thumb/' . $newImageName);
+        Image::make($imgRealPath)->fit(200,120)->save('storage/slajdovi/thumb/' . $newImageName);
 
         $data['thumb'] = config('app.url') . '/storage/slajdovi/thumb/' . $newImageName;
 

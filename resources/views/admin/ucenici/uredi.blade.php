@@ -67,7 +67,7 @@
                 </div>
                 <!-- row -->
                 <div class="row">                    
-                    <div class="col-xl-12 col-xxl-6">
+                    <div class="col-xl-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Uredi</h4>

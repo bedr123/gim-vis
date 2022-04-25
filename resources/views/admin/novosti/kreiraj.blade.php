@@ -67,7 +67,7 @@
                 </div>
                 <!-- row -->
                 <div class="row">                    
-                    <div class="col-xl-12 col-xxl-6">
+                    <div class="col-xl-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Unesi</h4>
@@ -90,19 +90,6 @@
 
                                                 <input type="text" name="autor" class="form-control input-default " placeholder="Ime i prezime autora">
                                                 @error('autor') <span class="text-danger">{{ $message }}</span> @enderror
-                                            </label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="select2-label select2-container" for="id_label_single">
-                                                Kategorija <br>
-            
-                                                <select name="category_id" class="select2-with-label-single js-states d-block form-control input-default" id="id_label_single">
-                                                    <option disabled selected value>izaberi kategoriju</option>
-                                                    @foreach($categories as $category)
-                                                        <option value="{{ $category->id }}">{{ $category->naziv }}</option>
-                                                    @endforeach
-                                                </select>
-                                                @error('category_id') <span class="text-danger">{{ $message }}</span> @enderror
                                             </label>
                                         </div>
                                         

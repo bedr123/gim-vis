@@ -26,7 +26,6 @@ class UpdatePostRequest extends FormRequest
         return [
             'naslov' => 'required|string',
             'slika' => 'mimes:png,jpg,jpeg',
-            'category_id' => 'required|integer',
             'kontent' => 'required',
             'autor' => 'required|string',
             'employees' => ''

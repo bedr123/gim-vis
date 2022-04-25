@@ -67,7 +67,7 @@
                 </div>
                 <!-- row -->
                 <div class="row">                    
-                    <div class="col-xl-12 col-xxl-6">
+                    <div class="col-xl-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Uredi</h4>
@@ -134,10 +134,10 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="select2-label select2-container" for="id_label_single">
+                                            <label class="select2-label select2-container" for="id_label_single1">
                                                 Kategorija <br>
             
-                                                <select name="kategorija" class="select2-with-label-single js-states d-block form-control input-default" id="id_label_single">
+                                                <select name="kategorija" class="select2-with-label-single js-states d-block form-control input-default" id="id_label_single1">
                                                     <option disabled value>izaberi kategoriju u koju spada uposlenik</option>
                                                     <option {{ $employee->kategorija === 'sadanji_radnici' ? 'selected' : '' }} value="sadasnji_radnici">Sadasnji radnik</option>
                                                     <option {{ $employee->kategorija === 'pocasni_profesori' ? 'selected' : '' }} value="pocasni_profesori">Pocasni profesor</option>

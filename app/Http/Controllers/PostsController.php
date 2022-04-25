@@ -9,7 +9,6 @@ use App\Http\Requests\UpdatePostRequest;
 use App\Http\Resources\PostResource;
 use App\Http\Resources\CollectionResource;
 use Illuminate\Support\Str;
-use App\Models\Category;
 use App\Models\Employee;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -23,9 +22,8 @@ class PostsController extends Controller
 
     public function create()
     {
-        $categories = Category::all();
         $employees = Employee::all();
-        return view('admin/novosti/kreiraj')->with('categories', $categories)->with('employees', $employees);
+        return view('admin/novosti/kreiraj')->with('employees', $employees);
     }
 
     public function store(StorePostRequest $request)
@@ -69,8 +67,6 @@ class PostsController extends Controller
     public function edit($postId)
     {
         $post = Post::findOrFail($postId);
-
-        $categories = Category::all();
 
         return view('admin/novosti/uredi')->with('categories', $categories)->with('post', $post);
     }

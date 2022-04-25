@@ -14,7 +14,6 @@ class Alter extends Migration
     public function up()
     {
         Schema::table('employees', function (Blueprint $table) {
-            $table->dropColumn('biografija');
             $table->text('informacije');
         });
     }

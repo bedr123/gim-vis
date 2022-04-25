@@ -17,7 +17,6 @@ class CreateDirectionsTable extends Migration
             $table->id();
             $table->string('slug');
             $table->string('naziv');
-            $table->text('opis');
             $table->string('ikonica');
             $table->longText('kontent');
             $table->timestamps();

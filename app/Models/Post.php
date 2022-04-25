@@ -14,7 +14,6 @@ class Post extends Model
         'naslov',
         'slug',
         'slika',
-        'category_id',
         'kontent',
         'autor',
         'thumb'
@@ -27,11 +26,6 @@ class Post extends Model
                 'source' => 'naslov'
             ]
         ];
-    }
-
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
     }
 
     public function employees()

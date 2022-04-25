@@ -17,7 +17,6 @@ class CreateEmployeesTable extends Migration
             $table->id();
             $table->string('ime_i_prezime');
             $table->string('slika');
-            $table->text('biografija')->nullable();
             $table->timestamps();
         });
     }

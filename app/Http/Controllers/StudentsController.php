@@ -50,7 +50,7 @@ class StudentsController extends Controller
     public function edit($studentId)
     {
         $student = Student::findOrFail($studentId);
-        return view('admin/ucenici/uredi');
+        return view('admin/ucenici/uredi')->with('student', $student);
     }
 
     public function update(UpdateStudentRequest $request, $studentId)

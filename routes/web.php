@@ -74,11 +74,6 @@ Route::prefix('admin')->group(function () {
         Route::put('novosti/{postId}', [PostsController::class, 'update']);
         Route::delete('novosti/{postId}', [PostsController::class, 'delete']);
 
-        Route::get('kategorije', [CategoriesController::class, 'index']);
-        Route::get('kategorije/kreiraj', [CategoriesController::class, 'create']);
-        Route::post('kategorije', [CategoriesController::class, 'store']);
-        Route::delete('kategorije/{categoryId}', [CategoriesController::class, 'delete']);
-
         Route::get('uposlenici', [EmployeesController::class, 'index']);
         Route::get('uposlenici/kreiraj', [EmployeesController::class, 'create']);
         Route::post('uposlenici', [EmployeesController::class, 'store']);

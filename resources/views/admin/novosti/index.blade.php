@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <button class="btn badge-primary">Dodaj novost</button>
+                        <a href="{{ config('app.url') . '/admin/novosti/kreiraj' }}"><button class="btn badge-primary">Dodaj novost</button></a>
                     </div>
                 </div>
 
