@@ -59,12 +59,12 @@ section {
 .heading::before {
     content: "";
     width: calc(2.5rem + 5%);
-    height: 3px;
+    height: 4px;
     background-color: var(--light-yellow);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -5px;
+    bottom: -10px;
 }
 
 .btn {
