@@ -167,6 +167,8 @@
 
 .novosti__text-content {
     margin: 1rem;
+    overflow: hidden;
+    height: 90px;
 }
 
 .novosti__text-content a {
