@@ -2,10 +2,9 @@
     Nav header start
 ***********************************-->
 <div class="nav-header">
-    <a href="index.html" class="brand-logo">
-        <img class="logo-abbr" src="./images/logo.png" alt="">
-        <img class="logo-compact" src="./images/logo-text.png" alt="">
-        <img class="brand-title" src="./images/logo-text.png" alt="">
+    <a href="{{ config('app.url') }}" class="brand-logo">
+        <img class="logo-abbr" src="{{ asset('assets/images/logo bijeli.png') }}" alt="">
+        <h4 style="color: white; margin-left: 10px; margin-top: 10px;">GIMNAZIJA VISOKO</h4>
     </a>
     <div class="nav-control">
         <div class="hamburger">

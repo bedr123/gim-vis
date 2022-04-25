@@ -21,7 +21,6 @@
 
     <div class="main1">
       <div class="hero">
-      <!--<img class="hero-image" src="{{ asset('assets/images/gim-1.jpg') }}">-->
       <div class="naslov-box">
             <p class="naslov">Uposlenici Škole</p>
       </div>

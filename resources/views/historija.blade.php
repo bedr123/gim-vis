@@ -21,7 +21,6 @@
   @include('layout.header')
 
   <div class="hero">
-      <!--<img class="hero-image" src="assets/images/gim-1.jpg">-->
       <div class="naslov-box">
             <p class="naslov">HISTORIJAT ŠKOLE</p>
       </div>
