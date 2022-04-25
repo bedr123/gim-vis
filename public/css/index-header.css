@@ -1,44 +1,53 @@
 .navbar {
-  height: 130px;
-  background: none;
+    position: absolute;
+    background: none;
+}
+
+.navbar.active {
+    background-color: #fff;
 }
 
 .sticky {
-  height: 130px;
-  background: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(0, 0px);
+    background: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0px);
 }
 
 .inView {
-  position: fixed;
-  height: 80px;
-  background-color: white;
-  transform: translate(0, 0);
-  transition: all 500ms ease-out;
+    position: fixed;
+    height: 100px;
+    background-color: white;
+    transform: translate(0, 0);
+    transition: all 500ms ease-out;
 }
 
 .logo-span {
-  color: white;
+    color: white;
 }
 
 .item {
-  color: white;
+    color: white;
 }
 .item::before {
-  background-color: white;
+    background-color: white;
 }
 
 .inView .logo-span {
-  color: black;
+    color: black;
 }
 
 .inView .item {
-  color: black;
+    color: black;
 }
 
 .inView .item::before {
-  background-color: black;
+    background-color: black;
+}
+
+@media screen and (max-width: 700px) {
+    .item {
+        color: #000;
+    }
 }

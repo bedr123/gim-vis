@@ -13,7 +13,7 @@
       integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
       crossorigin="anonymous"
     />
-  <title>Document</title>
+  <title>Uposlenici | Gimnazija Visoko</title>
 </head>
 <body>
 
@@ -45,6 +45,6 @@
   </div>
 
   @include('layout.footer')
-  <script src="{{ asset('js/app.js') }}"></script>
+  <script src="{{ asset('js/index.js') }}"></script>
 </body>
 </html>

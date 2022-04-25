@@ -1,256 +1,248 @@
 .header__slideshow-wrapper {
-  position: relative;
-  top: -130px;
-  left: 0;
-  overflow: hidden;
+    position: relative;
+    left: 0;
+    overflow: hidden;
 }
 
 .header .fa-solid {
-  position: absolute;
-  z-index: 5;
-  font-size: 2rem;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.2);
-  padding: 25px;
-}
-
-.header .fa-solid:hover {
-  /*color: rgb(212, 212, 212);*/
+    position: absolute;
+    z-index: 5;
+    font-size: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 25px;
 }
 
 #btn-left {
-  left: 0%;
+    left: 0%;
 }
 
 #btn-right {
-  right: 0%;
+    right: 0%;
 }
 
 .header__slideshow {
-  display: flex;
-  max-width: 100%;
+    display: flex;
+    max-width: 100%;
 }
 
 .slider-content {
-  min-width: 100%;
-  max-height: 100vh;
-  position: relative;
+    min-width: 100%;
+    max-height: 100vh;
+    position: relative;
 }
 
 .header__slideshow-images {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(70%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
 }
 
 .header__slideshow-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .info__box {
-  padding: 40px;
-  
+    padding: 40px;
 }
 
 .info__caption {
-  display: block;
-  color: white;
-  font-size: 3rem;
-  font-weight: 700;
-  text-transform: uppercase;
+    display: block;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .info__caption:hover {
-  color: rgb(236, 235, 235);;
+    color: rgb(236, 235, 235);
 }
 
 .info__description {
-  display: block;
-  color: rgb(255, 255, 255);
-  font-size: 2rem;
-  font-weight: 400;
+    display: block;
+    color: rgb(255, 255, 255);
+    font-size: 1.7rem;
+    font-weight: 400;
+    max-width: 60%;
 }
 
 .info__icon {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 40px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 40px;
 }
 
 .info__icon img {
-  width: 50px;
+    width: 50px;
 }
 
 /* SECTION SMJEROVI */
 
 .smjerovi__container {
-  display: grid;
-  width: 95%;
-  max-width: 1150px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 30%));
-  justify-content: center;
-  gap: 3rem;
-  margin: 3rem auto;
+    display: grid;
+    width: 95%;
+    max-width: 1150px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 30%));
+    justify-content: center;
+    gap: 3rem;
+    margin: 3rem auto;
 }
 
 .smjerovi__box {
-  text-align: center;
+    text-align: center;
 }
 
 .smjerovi__box i {
-  color: var(--black);
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  cursor: pointer;
+    color: var(--black);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
 }
 
 .smjerovi__icon {
-  width: 100px;
-  transition: all 200ms ease-in;
+    width: 100px;
+    transition: all 200ms ease-in;
 }
 
 .smjerovi__box:hover .smjerovi__icon {
-  transform: scale(1.3);
+    transform: scale(1.3);
 }
 
 .smjerovi__text-content h2 {
-  color: var(--black);
-  font-family: var(--roboto);
-  font-size: 1.75rem;
-  transition: all 200ms ease-out;
+    color: var(--black);
+    font-family: var(--roboto);
+    font-size: 1.75rem;
+    transition: all 200ms ease-out;
 }
 
 .smjerovi__box:hover .smjerovi__text-content h2 {
-  color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
 }
 
 /* SECTION NOVOSTI */
-
 .novosti__container {
-  width: 95%;
-  max-width: 1150px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
-  place-items: center;
+    width: 95%;
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    place-items: center;
 }
 
 .novosti__box {
-  /*max-width: 380px;*/
-  border-left: 1px solid rgb(187, 187, 187);
-  border-right: 1px solid rgb(187, 187, 187);
-  border-bottom: 1px solid rgb(187, 187, 187);
+    max-width: 380px;
+    border-left: 1px solid rgb(187, 187, 187);
+    border-right: 1px solid rgb(187, 187, 187);
+    border-bottom: 1px solid rgb(187, 187, 187);
 }
 
 .novosti__image {
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
 }
 
 .novosti__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1);
-  transition: all 400ms ease-in-out;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: all 400ms ease-in-out;
 }
 
 .novosti__box:hover .novosti__image img {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .novosti__text-content {
-  margin: 1rem;
+    margin: 1rem;
 }
 
 .novosti__text-content a {
-  display: inline-block;
-  font-family: var(--roboto);
-  text-align: left;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0.5rem 0;
+    display: inline-block;
+    font-family: var(--roboto);
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
 }
 
 .novosti__text-content a:hover {
-  color: rgb(63, 63, 63);
+    color: rgb(63, 63, 63);
 }
 
 .novosti__text-content h4 {
-  color: var(--light-yellow);
-  font-family: var(--roboto);
-  font-weight: 700;
+    color: var(--light-yellow);
+    font-family: var(--roboto);
+    font-weight: 700;
 }
 
 .novosti__text-content p {
-  font-family: var(--raleway);
-  margin-bottom: 1rem;
+    font-family: var(--raleway);
+    margin-bottom: 1rem;
 }
 
 /* O SKOLI SECTION */
 .about-us {
-  position: relative;
-  background-color: #dfdfdf;
-  z-index: -1;
-  padding: 3rem 0;
+    position: relative;
+    background-color: #dfdfdf;
+    padding: 3rem 0;
 }
 
 .about-info {
-  position: relative;
-  display: flex;
-  align-items: top;
-  width: 95%;
-  max-width: 1200px;
-  margin: 0 auto;
-  z-index: 999;
+    position: relative;
+    display: flex;
+    align-items: top;
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .about-info img {
-  width: 50%;
-  margin-right: 2rem;
+    width: 50%;
+    margin-right: 2rem;
 }
 
 .about-us-text h3 {
-  font-family: var(--roboto);
-  font-weight: 400;
-  font-size: 1.7rem;
-  margin-bottom: 2rem;
+    font-family: var(--roboto);
+    font-weight: 400;
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
 }
 
 .about-us-text p {
-  line-height: 1.6;
-  font-family: var(--raleway);
-  color: #737373;
-  margin-bottom: 2rem;
+    line-height: 1.6;
+    font-family: var(--raleway);
+    color: #737373;
+    margin-bottom: 2rem;
 }
 
 @media screen and (max-width: 1050px) {
-  .about-info {
-    justify-content: center;
-    flex-direction: column;
-  }
+    .about-info {
+        justify-content: center;
+        flex-direction: column;
+    }
 
-  .about-info img {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 2rem;
-  }
+    .about-info img {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
 }
 
 @media screen and (max-width: 700px) {
-  .header__slideshow-images {
-    min-height: 90vh;
-  }
+    .header__slideshow-images {
+        min-height: 100vh;
+    }
 }

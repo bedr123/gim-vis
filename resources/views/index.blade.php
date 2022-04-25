@@ -112,7 +112,7 @@
             sticati znanja i sposobnosti za nastavak obrazovanja na
             visokoškolskim ustanovama.
           </p>
-          <a href="#" class="btn">dsadasd</a>
+          <a href="#" class="btn">Više</a>
         </div>
       </div>
     </section>
@@ -141,7 +141,7 @@
 
   @include('layout.footer')
   
-  <script src="{{ asset('js/index-header.js') }}"></script>
-  <script src="{{ asset('js/app.js') }}"></script>
+  <script src="{{ asset('js/slider.js') }}"></script>
+  <script src="{{ asset('js/index.js') }}"></script>
   </body>
 </html>

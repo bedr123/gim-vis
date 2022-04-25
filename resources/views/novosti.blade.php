@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gimnazija Visoko</title>
+    <title>Novosti | Gimnazija Visoko</title>
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/novosti.css') }}" />
     <link rel="icon" href="{{ asset('assets/images/logo u boji.png') }}" />
@@ -105,6 +105,6 @@
 
     @include('layout.footer')
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/index.js') }}"></script>
   </body>
 </html>

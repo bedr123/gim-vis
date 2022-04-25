@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title> Responsive Contact Us Form |</title>
+    <title>Kontakt | Gimnazija Visoko</title>
     <link rel="stylesheet" href="{{ asset('css/kontakt.css') }}">
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     
@@ -64,6 +64,6 @@
   </div>
    
   @include('layout.footer')
-  <script src="{{ asset('js/app.js') }}"></script>
+  <script src="{{ asset('js/index.js') }}"></script>
 </body>
 </html>

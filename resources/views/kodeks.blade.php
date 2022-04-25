@@ -13,7 +13,7 @@
       integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
       crossorigin="anonymous"
     />
-  <title>Document</title>
+  <title>Kodeks | Gimnazija Visoko</title>
 </head>
 <body>
    @include('layout.header')
@@ -256,6 +256,6 @@
   </section>
 
   @include('layout.footer')
-  <script src="{{ asset('js/app.js') }}"></script>
+  <script src="{{ asset('js/index.js') }}"></script>
 </body>
 </html>
