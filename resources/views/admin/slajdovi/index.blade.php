@@ -46,8 +46,79 @@
             Content body start
         ***********************************-->
         <div class="content-body">
-            <!-- row -->
-            
+            <div class="container-fluid">
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h4>Slider</h4>
+                            <p class="mb-0">Uredi i dodaj nove slajdove</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                        <button class="btn badge-primary">Dodaj novi slide</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">SVI SLAJDOVI</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-responsive-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Naslov</th>
+                                                <th>Opis</th>
+                                                <th>Link</th>
+                                                <th>Slika</th>
+                                                <th>Redoslijed</th>
+                                                <th>Akcije</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>1</th>
+                                                <td>Slajd 1</td>
+                                                <td>Ovo je slajd 1. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                                    Architecto aspernatur, pariatur cumque illum voluptatem, eligendi itaque ab
+                                                     quae vel facere maiores harum optio labore eum repudiandae maxime hic fuga doloribus?</td>
+                                                <td>http://link:co</td>
+                                                <td>
+                                                    <img width="200px" height="120px" src="{{ asset('assets/images/gim-1.jpg') }}" />
+                                                </td>
+                                                <td>1</td>
+                                                <td class="d-flex flex-column align-items-start">
+                                                    <span class="btn badge-success my-2">Uredi</span>
+                                                    <span class="btn badge-danger">Obriši</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>2</th>
+                                                <td>Slajd 2 ojasoij kasodna lnoasfno</td>
+                                                <td>Ovo je slajd 2.</td>
+                                                <td>http://link:co</td>
+                                                <td>
+                                                    <img width="200px" height="120px" src="{{ asset('assets/images/gim-1.jpg') }}" />
+                                                </td>
+                                                <td>1</td>
+                                                <td class="d-flex flex-column align-items-start">
+                                                    <span class="btn btn-success my-2">Uredi</span>
+                                                    <span class="btn btn-danger">Obriši</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
         <!--**********************************
             Content body end

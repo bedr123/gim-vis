@@ -46,8 +46,82 @@
             Content body start
         ***********************************-->
         <div class="content-body">
-            <!-- row -->
-            
+            <div class="container-fluid">
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h4>Uposlenici Gimnazije</h4>
+                            <p class="mb-0">Dodaj nove uposlenike</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                        <button class="btn badge-primary">Dodaj uposlenika</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">SVI UPOSLENICI</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-responsive-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Ime i prezime</th>
+                                                <th>Slika</th>
+                                                <th>Uloga</th>
+                                                <th>Opis Posla</th>
+                                                <th>Informacije</th>
+                                                <th>Kategorija</th>
+                                                <th>Akcije</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>1</th>
+                                                <td>Uposlenik 1</td>
+                                                <td>
+                                                    <img height="200px" src="{{ asset('assets/images/gim-1.jpg') }}" />
+                                                </td>
+                                                <td>Profesor</td>
+                                                <td>Profesor matematike</td>
+                                                <td>Stari profa</td>
+                                                <td>Sadašnji radnik</td>
+                                                <td class="d-flex flex-column align-items-start">
+                                                    <span class="btn badge-success my-2">Uredi</span>
+                                                    <span class="btn badge-danger">Obriši</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav>
+                <ul class="pagination justify-content-center">
+                    <li class="page-item page-indicator">
+                        <a class="page-link" href="javascript:void()">
+                        <i class="icon-arrow-left"></i></a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="javascript:void()">1</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="javascript:void()">2</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void()">3</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void()">4</a></li>
+                    <li class="page-item page-indicator">
+                        <a class="page-link" href="javascript:void()">
+                        <i class="icon-arrow-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+            </div>
+            </div>            
         </div>
         <!--**********************************
             Content body end

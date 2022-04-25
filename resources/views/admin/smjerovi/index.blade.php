@@ -46,8 +46,57 @@
             Content body start
         ***********************************-->
         <div class="content-body">
-            <!-- row -->
-            
+            <div class="container-fluid">
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h4>Smijerovi</h4>
+                            <p class="mb-0">Uredi i dodaj nove smijerove</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                        <button class="btn badge-primary">Dodaj novi smijer</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">SVI SMIJEROVI</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-responsive-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Naziv smijera</th>
+                                                <th>Ikonica</th>
+                                                <th>Akcije</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>1</th>
+                                                <td>Smijer 1</td>
+                                                <td>
+                                                    <img width="80px" src="{{ asset('assets/images/mat.png') }}" />
+                                                </td>
+                                                <td class="d-flex flex-column align-items-start">
+                                                    <span class="btn badge-success my-2">Uredi</span>
+                                                    <span class="btn badge-danger">Obriši</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
         <!--**********************************
             Content body end

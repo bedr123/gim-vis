@@ -45,8 +45,9 @@
             Content body start
         ***********************************-->
         <div class="content-body">
-            <!-- row -->
-            
+            <div class="container-fluid">
+                <h1 class="text-center">Dobrodošli! Admin Panel Gimnazije Visoko!</h1>
+            </div>
         </div>
         <!--**********************************
             Content body end
