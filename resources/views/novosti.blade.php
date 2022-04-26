@@ -25,90 +25,19 @@
     <!-- NOVOSTI SECTION START -->
     <section class="novosti">
       <div class="novosti__container">
-        <div class="novosti__box">
-          <div class="novosti__image">
-            <img src="../assets/images/slider-slika-2.jpg" /> 
+        @foreach($posts as $post)
+          <div class="novosti__box">
+            <div class="novosti__image">
+              <a href="{{ config('app.url') . '/novosti/' . $post->slug }}"><img src="{{ $post->thumb }}" /></a>
+            </div>
+            <div class="novosti__text-content">
+              <h4>Novost</h4>
+              <a href="{{ config('app.url') . '/novosti/' . $post->slug }}"
+                >{{ $post->naslov }}</a
+              >
+            </div>
           </div>
-          
-          <div class="novosti__text-content">
-            <h4>INTERVJU</h4>
-            <a href="#"
-              >Bajden najavio žestoke sankcije Rusiji, ali poručio da SAD neće
-              ratovati s Moskvom</a
-            >
-          </div>
-        </div>
-        <div class="novosti__box">
-          <div class="novosti__image">
-            <img src="../assets/images/slider-slika-2.jpg" /> 
-          </div>
-          <div class="novosti__text-content">
-            <h4>INTERVJU</h4>
-            <a href="#"
-              >Bajden najavio žestoke sankcije Rusiji, ali poručio da SAD neće
-              ratovati s Moskvom</a
-            >
-          </div>
-        </div>
-        <div class="novosti__box">
-          <div class="novosti__image">
-            <img src="../assets/images/slider-slika-2.jpg" /> 
-          </div>
-          <div class="novosti__text-content">
-            <h4>INTERVJU</h4>
-            <a href="#"
-              >Bajden najavio žestoke sankcije Rusiji, ali poručio da SAD neće
-              ratovati s Moskvom</a
-            >
-          </div>
-        </div>
-        <div class="novosti__box">
-          <div class="novosti__image">
-            <img src="../assets/images/slider-slika-2.jpg" /> 
-          </div>
-          <div class="novosti__text-content">
-            <h4>INTERVJU</h4>
-            <a href="#"
-              >Bajden najavio žestoke sankcije Rusiji, ali poručio da SAD neće
-              ratovati s Moskvom</a
-            >
-          </div>
-        </div>
-        <div class="novosti__box">
-          <div class="novosti__image">
-            <img src="../assets/images/slider-slika-2.jpg" /> 
-          </div>
-          <div class="novosti__text-content">
-            <h4>INTERVJU</h4>
-            <a href="#"
-              >Bajden najavio žestoke sankcije Rusiji, ali poručio da SAD neće
-              ratovati s Moskvom</a
-            >
-          </div>
-        </div>
-        <div class="novosti__box">
-          <div class="novosti__image">
-            <img src="../assets/images/slider-slika-2.jpg" /> 
-          </div>
-          <div class="novosti__text-content">
-            <h4>INTERVJU</h4>
-            <a href="#"
-              >Bajden najavio žestoke sankcije Rusiji, ali poručio da SAD neće
-              ratovati s Moskvom</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="pagination">
-        <button class="pag-btn">Prethodna</button>
-        <div class="pag-container">
-          <span class="pag-item active">1</span>
-          <span class="pag-item">2</span>
-          <span class="pag-item">3</span>
-          <span class="pag-item">...</span>
-          <span class="pag-item">7</span>
-        </div>
-        <button class="pag-btn">Sljedeća</button>
+        @endforeach
       </div>
     </section>
     <!-- NOVOSTI SECTION END -->

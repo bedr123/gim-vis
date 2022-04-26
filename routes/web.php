@@ -40,11 +40,13 @@ Route::get('kodeks', [PagesController::class, 'kodeks']);
 
 Route::get('uposlenici', [EmployeesController::class, 'getAllEmployees']);
 
+Route::get('ucenici', [StudentsController::class, 'getAllStudents']);
+
 Route::get('kontakt', [PagesController::class, 'kontakt']);
 
-Route::get('novosti', function () {
-    return view('novosti');
-});
+Route::get('novosti', [PostsController::class, 'getAllPosts']);
+
+Route::get('novosti/{slug}', [PostsController::class, 'showSinglePost']);
 
 Route::get('prijava', [LoginController::class, 'showLogin']);
 Route::post('prijava', [LoginController::class, 'login'])->name('login');

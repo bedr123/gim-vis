@@ -110,4 +110,16 @@ class PostsController extends Controller
             'message' => 'Uspjesno izbrisano!'
         ]);
     }
+
+    public function showSinglePost($slug)
+    {
+        $post = Post::where('slug', $slug)->firstOrFail();
+        return view('novosti/single')->with('post', $post);
+    }
+
+    public function getAllPosts()
+    {
+        $posts = Post::latest()->paginate(12);
+        return view('novosti')->with('posts', $posts);
+    }
 }

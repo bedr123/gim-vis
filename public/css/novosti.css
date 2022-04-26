@@ -6,6 +6,7 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.25rem;
     place-items: center;
+    padding-top: 50px;
 }
 
 .novosti__box {
@@ -26,15 +27,17 @@
     height: 100%;
     object-fit: cover;
     transform: scale(1);
-    transition: all 300ms ease-in-out;
+    transition: transform 0.4s ease;
 }
 
 .novosti__box:hover .novosti__image img {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .novosti__text-content {
     margin: 1rem;
+    overflow: hidden;
+    height: 90px;
 }
 
 .novosti__text-content a {

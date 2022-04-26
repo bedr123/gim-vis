@@ -18,7 +18,6 @@
 <body>
 @include('layout.header')
   <div class="hero">
-      <img class="hero-image" src="{{ asset('assets/images/gim-1.jpg') }}">
       <div class="naslov-box">
             <p class="naslov">{{ $direction->naziv }}</p>
       </div> 

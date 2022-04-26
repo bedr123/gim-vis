@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ asset('css/uposlenici.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/ucenici.css') }}">
   <link rel="stylesheet" href="{{ asset('css/index.css') }}">
   <script src="https://kit.fontawesome.com/425dea2354.js" crossorigin="anonymous"></script>
     <link
@@ -13,7 +13,7 @@
       integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
       crossorigin="anonymous"
     />
-  <title>Uposlenici | Gimnazija Visoko</title>
+  <title>Učenici | Gimnazija Visoko</title>
 </head>
 <body>
 
@@ -28,13 +28,13 @@
     <div class="main1">
       <div class="products">
         <div class="gallery-image">
-          @foreach($employees as $employee)
+          @foreach($students as $student)
             <div class="img-box">
-              <img src="{{ $employee->slika }}" alt="" />
+              <img src="{{ $student->slika }}" alt="" />
               <div class="transparent-box">
                 <div class="caption">
-                  <p>{{ $employee->ime_i_prezime }}</p>
-                  <p class="opacity-low">{{ $employee->opis_posla }}</p>
+                  <p>{{ $student->ime_i_prezime }}</p>
+                  <p class="opacity-low">{{ $student->opis_posla }}</p>
                 </div>
               </div>
             </div>

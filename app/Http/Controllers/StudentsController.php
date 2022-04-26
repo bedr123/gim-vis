@@ -14,7 +14,7 @@ class StudentsController extends Controller
     public function index()
     {
         $students = Student::all();
-        return view('admin/ucenici/index');
+        return view('admin/ucenici/index')->with('students', $students);
     }
 
     public function create()
@@ -89,5 +89,11 @@ class StudentsController extends Controller
         return redirect(config('app.url') . '/admin/novosti')->with([
             'message' => 'Uspjesno izbrisano!'
         ]);
+    }
+
+    public function getAllStudents()
+    {
+        $students = Student::all();
+        return view('ucenici')->with('students', $students);
     }
 }
