@@ -21,13 +21,28 @@
 
     <div class="hero">
       <div class="naslov-box">
-            <p class="naslov">Uposlenici Škole</p>
+            <p class="naslov">Učenici Škole</p>
       </div>
     </div>
 
     <div class="main1">
       <div class="products">
         <div class="gallery-image">
+          <p class="category">Talentovani učenici Gimnazije</p>
+          @foreach($students as $student)
+            <div class="img-box">
+              <img src="{{ $student->slika }}" alt="" />
+              <div class="transparent-box">
+                <div class="caption">
+                  <p>{{ $student->ime_i_prezime }}</p>
+                  <p class="opacity-low">{{ $student->opis_posla }}</p>
+                </div>
+              </div>
+            </div>
+          @endforeach
+        </div>
+        <div class="gallery-image">
+          <p class="category">Alumni Gimnazije</p>
           @foreach($students as $student)
             <div class="img-box">
               <img src="{{ $student->slika }}" alt="" />

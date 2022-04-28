@@ -5,6 +5,8 @@
 
 }
 body {
+   background-image: url('../../assets/images/gim-1.jpg');
+   background-repeat: no-repeat;
    background-size: cover;
    font-family: sans-serif;
 }
@@ -21,8 +23,7 @@ body {
     width: 100%;
     max-width: 400px;
     padding: 120px 33px 100px;
-    background-color: rgba(0,0,0,0.7);
-    border-radius: 70px;
+    background-color: rgb(0,0,0);
     color: rgb(0, 0, 0);
     box-shadow: 0 15px 25px rgba(0,0,0,0.5);
 }
@@ -97,4 +98,8 @@ form .input-group{
     border-radius: 5px;
     cursor: pointer;
     color: white;
+}
+
+.logo {
+    width: 100px;
 }

@@ -13,7 +13,7 @@
 
     <form method="POST" action="{{ route('login') }}" class="form">
       @csrf
-        
+      <img class="logo" src="{{ asset('assets/images/logo bijeli.png') }}" alt="">
       <h2>PRIJAVA</h2>
 
       <div class="input-group">

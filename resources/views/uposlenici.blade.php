@@ -27,8 +27,41 @@
 
     <div class="main1">
       <div class="products">
+      <p class="category">Uprava</p>
         <div class="gallery-image">
-          @foreach($employees as $employee)
+          @foreach($employees->where('uloga', 'uprava') as $employee)
+            <div class="img-box">
+              <img src="{{ $employee->slika }}" alt="" />
+              <div class="transparent-box">
+                <div class="caption">
+                  <p>{{ $employee->ime_i_prezime }}</p>
+                  <p class="opacity-low">{{ $employee->opis_posla }}</p>
+                </div>
+              </div>
+            </div>
+          @endforeach
+        </div>
+      </div>
+      <div class="products">
+        <p class="category">Profesori/ce</p>
+        <div class="gallery-image">
+          @foreach($employees->where('uloga', 'profesori') as $employee)
+            <div class="img-box">
+              <img src="{{ $employee->slika }}" alt="" />
+              <div class="transparent-box">
+                <div class="caption">
+                  <p>{{ $employee->ime_i_prezime }}</p>
+                  <p class="opacity-low">{{ $employee->opis_posla }}</p>
+                </div>
+              </div>
+            </div>
+          @endforeach
+        </div>
+      </div>
+      <div class="products">
+        <p class="category">Tehničko osoblje</p>
+        <div class="gallery-image">
+          @foreach($employees->where('uloga', 'tehnicko_osoblje') as $employee)
             <div class="img-box">
               <img src="{{ $employee->slika }}" alt="" />
               <div class="transparent-box">

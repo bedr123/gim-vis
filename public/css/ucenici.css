@@ -12,7 +12,6 @@ h2 {
     text-transform: uppercase;
 }
 .products {
-    text-align: center;
     font-size: 1.3rem;
     letter-spacing: 1px;
     color: white;
@@ -29,6 +28,11 @@ h2 {
     width: 330px;
     transform: scale(1);
     transition: transform 0.4s ease;
+}
+
+.category {
+    padding: 15px;
+    border-bottom: #f1f1f1;
 }
 
 .img-box {
