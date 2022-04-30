@@ -16,7 +16,7 @@ class PostsController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::latest()->paginate(10);
         return view('admin/novosti/index')->with('posts', $posts);
     }
 
@@ -68,7 +68,7 @@ class PostsController extends Controller
     {
         $post = Post::findOrFail($postId);
 
-        return view('admin/novosti/uredi')->with('categories', $categories)->with('post', $post);
+        return view('admin/novosti/uredi')->with('post', $post);
     }
 
     public function update(UpdatePostRequest $request, $postId)

@@ -79,19 +79,25 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th>1</th>
-                                                <td>Uposlenik 1</td>
-                                                <td>
-                                                    <img height="200px" src="{{ asset('assets/images/gim-1.jpg') }}" />
-                                                </td>
-                                                <td>Stari profa</td>
-                                                <td>Sadašnji učenik</td>
-                                                <td class="d-flex flex-column align-items-start">
-                                                    <span class="btn badge-success my-2">Uredi</span>
-                                                    <span class="btn badge-danger">Obriši</span>
-                                                </td>
-                                            </tr>
+                                            @foreach($students as $student)
+                                                <tr>
+                                                    <th>{{ $loop->index + 1 }}</th>
+                                                    <td>{{ $student->ime_i_prezime }}</td>
+                                                    <td>
+                                                        <img height="200px" src="{{ $student->slika }}" />
+                                                    </td>
+                                                    <td>{{ $student->informacije }}</td>
+                                                    <td>{{ $student->kategorija }}</td>
+                                                    <td class="d-flex flex-column align-items-start">
+                                                        <a href="{{ config('app.url') . '/admin/ucenici/' . $student->id . '/uredi' }}"><button class="btn btn-success my-2">Uredi</button></a>
+                                                        <form action="{{ config('app.url') . '/admin/ucenici/' . $student->id }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger">Obriši</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

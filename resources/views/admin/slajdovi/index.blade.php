@@ -80,36 +80,26 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th>1</th>
-                                                <td>Slajd 1</td>
-                                                <td>Ovo je slajd 1. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                                    Architecto aspernatur, pariatur cumque illum voluptatem, eligendi itaque ab
-                                                     quae vel facere maiores harum optio labore eum repudiandae maxime hic fuga doloribus?</td>
-                                                <td>http://link:co</td>
-                                                <td>
-                                                    <img width="200px" height="120px" src="{{ asset('assets/images/gim-1.jpg') }}" />
-                                                </td>
-                                                <td>1</td>
-                                                <td class="d-flex flex-column align-items-start">
-                                                    <span class="btn badge-success my-2">Uredi</span>
-                                                    <span class="btn badge-danger">Obriši</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>2</th>
-                                                <td>Slajd 2 ojasoij kasodna lnoasfno</td>
-                                                <td>Ovo je slajd 2.</td>
-                                                <td>http://link:co</td>
-                                                <td>
-                                                    <img width="200px" height="120px" src="{{ asset('assets/images/gim-1.jpg') }}" />
-                                                </td>
-                                                <td>1</td>
-                                                <td class="d-flex flex-column align-items-start">
-                                                    <span class="btn btn-success my-2">Uredi</span>
-                                                    <span class="btn btn-danger">Obriši</span>
-                                                </td>
-                                            </tr>
+                                            @foreach($slides as $slide)
+                                                <tr>
+                                                    <th>{{ $loop->index + 1 }}</th>
+                                                    <td>{{ $slide->naslov }}</td>
+                                                    <td>{{ $slide->opis }}</td>
+                                                    <td>{{ substr($slide->link, 0, 20) }}</td>
+                                                    <td>
+                                                        <img width="200px" height="120px" src="{{ $slide->slika }}" />
+                                                    </td>
+                                                    <td>1</td>
+                                                    <td class="d-flex flex-column align-items-start">
+                                                        <a href="{{ config('app.url') . '/admin/slajdovi/' . $slide->id . '/uredi' }}"><button class="btn btn-success my-2">Uredi</button></a>
+                                                        <form action="{{ config('app.url') . '/admin/slajdovi/' . $slide->id }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger">Obriši</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

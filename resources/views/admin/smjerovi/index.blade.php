@@ -77,17 +77,23 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th>1</th>
-                                                <td>Smijer 1</td>
-                                                <td>
-                                                    <img width="80px" src="{{ asset('assets/images/mat.png') }}" />
-                                                </td>
-                                                <td class="d-flex flex-column align-items-start">
-                                                    <span class="btn badge-success my-2">Uredi</span>
-                                                    <span class="btn badge-danger">Obriši</span>
-                                                </td>
-                                            </tr>
+                                            @foreach($directions as $direction)
+                                                <tr>
+                                                    <th>{{ $loop->index + 1 }}</th>
+                                                    <td>{{ $direction->naziv }}</td>
+                                                    <td>
+                                                        <img width="80px" src="{{ $direction->ikonica }}" />
+                                                    </td>
+                                                    <td class="d-flex flex-column align-items-start">
+                                                        <a href="{{ config('app.url') . '/admin/smjerovi/' . $direction->id . '/uredi' }}"><button class="btn btn-success my-2">Uredi</button></a>
+                                                        <form action="{{ config('app.url') . '/admin/smjerovi/' . $direction->id }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger">Obriši</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

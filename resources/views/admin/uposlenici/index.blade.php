@@ -81,21 +81,27 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th>1</th>
-                                                <td>Uposlenik 1</td>
-                                                <td>
-                                                    <img height="200px" src="{{ asset('assets/images/gim-1.jpg') }}" />
-                                                </td>
-                                                <td>Profesor</td>
-                                                <td>Profesor matematike</td>
-                                                <td>Stari profa</td>
-                                                <td>Sadašnji radnik</td>
-                                                <td class="d-flex flex-column align-items-start">
-                                                    <span class="btn badge-success my-2">Uredi</span>
-                                                    <span class="btn badge-danger">Obriši</span>
-                                                </td>
-                                            </tr>
+                                            @foreach($employees as $employee)
+                                                <tr>
+                                                    <th>{{ $loop->index + 1 }}</th>
+                                                    <td>{{ $employee->ime_i_prezime }}</td>
+                                                    <td>
+                                                        <img height="200px" src="{{ $employee->slika }}" />
+                                                    </td>
+                                                    <td>{{ $employee->uloga }}</td>
+                                                    <td>{{ $employee->opis_posla }}</td>
+                                                    <td>{{ $employee->informacije }}</td>
+                                                    <td>{{ $employee->kategorija }}</td>
+                                                    <td class="d-flex flex-column align-items-start">
+                                                        <a href="{{ config('app.url') . '/admin/uposlenici/' . $employee->id . '/uredi' }}"><button class="btn btn-success my-2">Uredi</button></a>
+                                                        <form action="{{ config('app.url') . '/admin/uposlenici/' . $employee->id }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger">Obriši</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
