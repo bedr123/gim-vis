@@ -9,7 +9,7 @@ hamburgerMenu.addEventListener("click", () => {
         bar.classList.toggle("active");
     });
     menu.classList.toggle("active");
-    navbar.classList.toggle("active2");
+    navbar.classList.toggle("active");
 });
 
 // DROPDOWN
@@ -22,15 +22,17 @@ dropdownBtn.forEach((btn) => {
 });
 
 // STICKY HEADER
-const nav = document.querySelector(".navbar");
-const body = document.querySelector("body");
-
-function stickyNav() {
-    if (window.scrollY >= 80) {
-        nav.classList.add("active");
+function navbarAnimation() {
+    if (window.scrollY > 130) {
+        navbar.classList.add("sticky");
     } else {
-        nav.classList.remove("active");
+        navbar.classList.remove("sticky");
+    }
+    if (window.scrollY > 200) {
+        navbar.classList.add("slide");
+    } else {
+        navbar.classList.remove("slide");
     }
 }
 
-window.addEventListener("scroll", stickyNav);
+window.addEventListener("scroll", navbarAnimation);

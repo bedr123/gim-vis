@@ -44,15 +44,13 @@
 
 .header__slideshow-info {
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
-}
-
-.info__box {
-    padding: 40px;
+    align-items: flex-end;
+    padding: 1.5rem;
 }
 
 .info__caption {
@@ -73,13 +71,6 @@
     font-size: 1.7rem;
     font-weight: 400;
     max-width: 60%;
-}
-
-.info__icon {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 40px;
 }
 
 .info__icon img {
@@ -199,7 +190,7 @@
 .about-us {
     position: relative;
     background-color: #f1f1f1;
-    padding: 3rem 0;
+    padding: 3rem 1rem;
 }
 
 .about-info {

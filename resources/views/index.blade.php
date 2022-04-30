@@ -7,7 +7,7 @@
     <title>Gimnazija Visoko</title>
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/index-header.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/index-navbar.css') }}" />
     <link rel="icon" href="{{ asset('/assets/images/logo u boji.png') }}" />
     <script
       src="https://kit.fontawesome.com/7526d7a6e6.js"
@@ -112,7 +112,7 @@
             sticati znanja i sposobnosti za nastavak obrazovanja na
             visokoškolskim ustanovama.
           </p>
-          <a href="#" class="btn">Pročitaj Više</a>
+          <a href="{{ config('app.url') . '/o-skoli' }}" class="btn">Pročitaj Više</a>
         </div>
       </div>
     </section>
