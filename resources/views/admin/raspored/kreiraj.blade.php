@@ -8,9 +8,13 @@
     <title>Focus - Bootstrap Admin Dashboard </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('administrator/images/favicon.png') }}">
-    <link rel="stylesheet" href="{{asset('administrator/vendor/owl-carousel/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{('administrator/vendor/owl-carousel/css/owl.theme.default.min.css')}}">
-    <link href="{{asset('administrator/vendor/jqvmap/css/jqvmap.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('administrator/vendor/owl-carousel/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('administrator/vendor/owl-carousel/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('administrator/vendor/select2/css/select2.min.css') }}">
+    <link href="{{ asset('administrator/vendor/jqvmap/css/jqvmap.min.css') }}" rel="stylesheet">
+    <!-- Summernote -->
+    <link href="{{ asset('administrator/vendor/summernote/summernote.css') }}" rel="stylesheet">
+    <!-- Custom Stylesheet -->
     <link href="{{ asset('administrator/css/style.css') }}" rel="stylesheet">
     
 
@@ -46,71 +50,53 @@
             Content body start
         ***********************************-->
         <div class="content-body">
-            <div class="container-fluid">
+        <div class="container-fluid">
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Uposlenici Gimnazije</h4>
-                            <p class="mb-0">Dodaj nove uposlenike</p>
+                            <h4>Dodaj novi raspored</h4>
+                            <span class="ml-1">Raspored</span>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <a href="{{ config('app.url') . '/admin/uposlenici/kreiraj' }}"><button class="btn badge-primary">Dodaj uposlenika</button></a>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Raspored</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Kreiraj</a></li>
+                        </ol>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-lg-12">
+                <!-- row -->
+                <div class="row">                    
+                    <div class="col-xl-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">SVI UPOSLENICI</h4>
+                                <h4 class="card-title">Unesi</h4>
                             </div>
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-responsive-sm">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Ime i prezime</th>
-                                                <th>Slika</th>
-                                                <th>Uloga</th>
-                                                <th>Opis Posla</th>
-                                                <th>Informacije</th>
-                                                <th>Kategorija</th>
-                                                <th>Akcije</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach($employees as $employee)
-                                                <tr>
-                                                    <th>{{ $loop->index + 1 }}</th>
-                                                    <th>{{ $employee->ime_i_prezime }}</th>
-                                                    <th>
-                                                        <img height="200px" src="{{ $employee->slika }}" />
-                                                    </th>
-                                                    <th>{{ $employee->uloga }}</th>
-                                                    <th>{{ $employee->opis_posla }}</th>
-                                                    <th>{!! $employee->informacije !!}</th>
-                                                    <th>{{ $employee->kategorija }}</th>
-                                                    <th class="d-flex flex-column align-items-start">
-                                                        <a href="{{ config('app.url') . '/admin/uposlenici/' . $employee->id . '/uredi' }}"><button class="btn btn-success my-2">Uredi</button></a>
-                                                        <form action="{{ config('app.url') . '/admin/uposlenici/' . $employee->id }}" method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger">Obriši</button>
-                                                        </form>
-                                                    </th>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+                                <div class="basic-form">
+                                    <form method="POST" action="{{ config('app.url') . '/admin/raspored' }}" enctype='multipart/form-data'>
+                                        @csrf
+                                        <div class="form-group">
+                                            <label for="custom-file" class="select2-label select2-container">
+                                                Slika <br>
+
+                                                <div class="input-group mb-3">
+                                                    <div class="custom-file">
+                                                        <input type="file" name="slika" class="custom-file-input form-control input-default" id="custom-file">
+                                                        <label class="custom-file-label">Izaberi fajl</label>
+                                                    </div>
+                                                </div>
+                                                @error('slika') <span class="text-danger">{{ $message }}</span> @enderror
+                                            </label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary mt-3">Dodaj</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                {{ $employees->links('pagination.pagination') }}
-            </div>            
+            </div>
         </div>
         <!--**********************************
             Content body end
@@ -148,7 +134,7 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
-    <script src="{{asset('administrator/vendor/global/global.min.js')}}"></script>
+    <script src="{{ asset('administrator/vendor/global/global.min.js') }}"></script>
     <script src="{{ asset('administrator/js/quixnav-init.js') }}"></script>
     <script src="{{ asset('administrator/js/custom.min.js') }}"></script>
 
@@ -177,6 +163,14 @@
 
 
     <script src="{{ asset('administrator/js/dashboard/dashboard-1.js') }}"></script>
+
+    <script src="{{ asset('administrator/vendor/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('administrator/js/plugins-init/select2-init.js') }}"></script>
+
+    <!-- Summernote -->
+    <script src="{{ asset('administrator/vendor/summernote/js/summernote.min.js') }}"></script>
+    <!-- Summernote init -->
+    <script src="{{ asset('administrator/js/plugins-init/summernote-init.js') }}"></script>
 
 </body>
 

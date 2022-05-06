@@ -12,7 +12,7 @@ class GalleryController extends Controller
 {
     public function index()
     {
-        $directions = Direction::all();
+        $directions = Direction::latest()->paginate(10);
         return view('admin/galerija/index')->with('directions', $directions);
     }
 

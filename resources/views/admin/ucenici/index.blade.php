@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <button class="btn badge-primary">Dodaj učenika</button>
+                        <a href="{{ config('app.url') . '/admin/ucenici/kreiraj' }}"><button class="btn badge-primary">Dodaj učenika</button></a>
                     </div>
                 </div>
 
@@ -82,20 +82,20 @@
                                             @foreach($students as $student)
                                                 <tr>
                                                     <th>{{ $loop->index + 1 }}</th>
-                                                    <td>{{ $student->ime_i_prezime }}</td>
-                                                    <td>
+                                                    <th>{{ $student->ime_i_prezime }}</th>
+                                                    <th>
                                                         <img height="200px" src="{{ $student->slika }}" />
-                                                    </td>
-                                                    <td>{{ $student->informacije }}</td>
-                                                    <td>{{ $student->kategorija }}</td>
-                                                    <td class="d-flex flex-column align-items-start">
+                                                    </th>
+                                                    <th>{!! $student->informacije !!}</th>
+                                                    <th>{{ $student->kategorija }}</th>
+                                                    <th class="d-flex flex-column align-items-start">
                                                         <a href="{{ config('app.url') . '/admin/ucenici/' . $student->id . '/uredi' }}"><button class="btn btn-success my-2">Uredi</button></a>
                                                         <form action="{{ config('app.url') . '/admin/ucenici/' . $student->id }}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger">Obriši</button>
                                                         </form>
-                                                    </td>
+                                                    </th>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -105,24 +105,7 @@
                         </div>
                     </div>
                 </div>
-                <nav>
-                <ul class="pagination justify-content-center">
-                    <li class="page-item page-indicator">
-                        <a class="page-link" href="javascript:void()">
-                        <i class="icon-arrow-left"></i></a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="javascript:void()">1</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="javascript:void()">2</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:void()">3</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:void()">4</a></li>
-                    <li class="page-item page-indicator">
-                        <a class="page-link" href="javascript:void()">
-                        <i class="icon-arrow-right"></i></a>
-                    </li>
-                </ul>
-            </nav>
-            </div>
+                {{ $students->links('pagination.pagination') }}
             </div>
         </div>
         <!--**********************************

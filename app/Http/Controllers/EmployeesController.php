@@ -13,7 +13,7 @@ class EmployeesController extends Controller
 {
     public function index()
     {
-        $employees = Employee::all();
+        $employees = Employee::latest()->paginate(10);
         return view('admin/uposlenici/index')->with('employees', $employees);
     }
 

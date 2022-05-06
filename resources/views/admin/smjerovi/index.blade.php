@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <button class="btn badge-primary">Dodaj novi smijer</button>
+                        <a href="{{ config('app.url') . '/admin/smjerovi/kreiraj' }}"><button class="btn badge-primary">Dodaj novi smijer</button></a>
                     </div>
                 </div>
 
@@ -80,18 +80,18 @@
                                             @foreach($directions as $direction)
                                                 <tr>
                                                     <th>{{ $loop->index + 1 }}</th>
-                                                    <td>{{ $direction->naziv }}</td>
-                                                    <td>
+                                                    <th>{{ $direction->naziv }}</th>
+                                                    <th>
                                                         <img width="80px" src="{{ $direction->ikonica }}" />
-                                                    </td>
-                                                    <td class="d-flex flex-column align-items-start">
+                                                    </th>
+                                                    <th class="d-flex flex-column align-items-start">
                                                         <a href="{{ config('app.url') . '/admin/smjerovi/' . $direction->id . '/uredi' }}"><button class="btn btn-success my-2">Uredi</button></a>
                                                         <form action="{{ config('app.url') . '/admin/smjerovi/' . $direction->id }}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger">Obriši</button>
                                                         </form>
-                                                    </td>
+                                                    </th>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                {{ $directions->links('pagination.pagination') }}
             </div>
         </div>
         <!--**********************************

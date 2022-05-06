@@ -50,12 +50,12 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Uposlenici Gimnazije</h4>
-                            <p class="mb-0">Dodaj nove uposlenike</p>
+                            <h4>Raspored časova</h4>
+                            <p class="mb-0">Novi raspored</p>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <a href="{{ config('app.url') . '/admin/uposlenici/kreiraj' }}"><button class="btn badge-primary">Dodaj uposlenika</button></a>
+                    <a href="{{ config('app.url') . '/admin/raspored/kreiraj' }}"><button class="btn badge-primary">Novi raspored</button></a>
                     </div>
                 </div>
 
@@ -63,7 +63,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">SVI UPOSLENICI</h4>
+                                <h4 class="card-title">Raspored</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -71,37 +71,26 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Ime i prezime</th>
                                                 <th>Slika</th>
-                                                <th>Uloga</th>
-                                                <th>Opis Posla</th>
-                                                <th>Informacije</th>
-                                                <th>Kategorija</th>
                                                 <th>Akcije</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($employees as $employee)
-                                                <tr>
-                                                    <th>{{ $loop->index + 1 }}</th>
-                                                    <th>{{ $employee->ime_i_prezime }}</th>
-                                                    <th>
-                                                        <img height="200px" src="{{ $employee->slika }}" />
-                                                    </th>
-                                                    <th>{{ $employee->uloga }}</th>
-                                                    <th>{{ $employee->opis_posla }}</th>
-                                                    <th>{!! $employee->informacije !!}</th>
-                                                    <th>{{ $employee->kategorija }}</th>
-                                                    <th class="d-flex flex-column align-items-start">
-                                                        <a href="{{ config('app.url') . '/admin/uposlenici/' . $employee->id . '/uredi' }}"><button class="btn btn-success my-2">Uredi</button></a>
-                                                        <form action="{{ config('app.url') . '/admin/uposlenici/' . $employee->id }}" method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger">Obriši</button>
-                                                        </form>
-                                                    </th>
-                                                </tr>
-                                            @endforeach
+                                            @if ($schedule)
+                                            <tr>
+                                                <th>1</th>
+                                                <td>
+                                                    <img height="200px" src="{{ $schedule->slika }}" />
+                                                </td>
+                                                <td class="d-flex flex-column align-items-start">
+                                                    <form action="{{ config('app.url') . '/admin/raspored/' . $schedule->id }}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger">Obriši</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                            @endif
                                         </tbody>
                                     </table>
                                 </div>
@@ -109,7 +98,7 @@
                         </div>
                     </div>
                 </div>
-                {{ $employees->links('pagination.pagination') }}
+            </div>
             </div>            
         </div>
         <!--**********************************

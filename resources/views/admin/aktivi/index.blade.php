@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <a href="{{ config('app.url') . '/admin/uposlenici/kreiraj' }}"><button class="btn badge-primary">Dodaj uposlenika</button></a>
+                    <a href="{{ config('app.url') . '/admin/aktivi/kreiraj' }}"><button class="btn badge-primary">Dodaj uposlenika</button></a>
                     </div>
                 </div>
 
@@ -81,27 +81,26 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($employees as $employee)
-                                                <tr>
-                                                    <th>{{ $loop->index + 1 }}</th>
-                                                    <th>{{ $employee->ime_i_prezime }}</th>
-                                                    <th>
-                                                        <img height="200px" src="{{ $employee->slika }}" />
-                                                    </th>
-                                                    <th>{{ $employee->uloga }}</th>
-                                                    <th>{{ $employee->opis_posla }}</th>
-                                                    <th>{!! $employee->informacije !!}</th>
-                                                    <th>{{ $employee->kategorija }}</th>
-                                                    <th class="d-flex flex-column align-items-start">
-                                                        <a href="{{ config('app.url') . '/admin/uposlenici/' . $employee->id . '/uredi' }}"><button class="btn btn-success my-2">Uredi</button></a>
-                                                        <form action="{{ config('app.url') . '/admin/uposlenici/' . $employee->id }}" method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger">Obriši</button>
-                                                        </form>
-                                                    </th>
-                                                </tr>
-                                            @endforeach
+                                            
+                                            <tr>
+                                                <th></th>
+                                                <td></td>
+                                                <td>
+                                                    <img height="200px" src="" />
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="d-flex flex-column align-items-start">
+                                                    <a href=""><button class="btn btn-success my-2">Uredi</button></a>
+                                                    <form action="" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger">Obriši</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -109,7 +108,7 @@
                         </div>
                     </div>
                 </div>
-                {{ $employees->links('pagination.pagination') }}
+                {{ $assets->links('pagination.pagination') }}
             </div>            
         </div>
         <!--**********************************

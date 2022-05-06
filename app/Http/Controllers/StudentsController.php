@@ -13,7 +13,7 @@ class StudentsController extends Controller
 {
     public function index()
     {
-        $students = Student::all();
+        $students = Student::latest()->paginate(10);
         return view('admin/ucenici/index')->with('students', $students);
     }
 

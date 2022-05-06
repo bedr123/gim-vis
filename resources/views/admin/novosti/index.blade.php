@@ -81,19 +81,19 @@
                                             @foreach($posts as $post)
                                                 <tr>
                                                     <th>{{ $loop->index + 1 }}</th>
-                                                    <td>{{ $post->naslov }}</td>
-                                                    <td>
+                                                    <th>{{ $post->naslov }}</th>
+                                                    <th>
                                                         <img width="200px" src="{{ $post->slika }}" />
-                                                    </td>
-                                                    <td>{{ $post->autor }}</td>
-                                                    <td class="d-flex flex-column align-items-start">
+                                                    </th>
+                                                    <th>{{ $post->autor }}</th>
+                                                    <th class="d-flex flex-column align-items-start">
                                                         <a href="{{ config('app.url') . '/admin/novosti/' . $post->id . '/uredi' }}"><button class="btn btn-success my-2">Uredi</button></a>
                                                         <form action="{{ config('app.url') . '/admin/novosti/' . $post->id }}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger">Obriši</button>
                                                         </form>
-                                                    </td>
+                                                    </th>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -103,24 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <nav>
-                <ul class="pagination justify-content-center">
-                    <li class="page-item page-indicator">
-                        <a class="page-link" href="javascript:void()">
-                            <i class="icon-arrow-left"></i></a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="javascript:void()">1</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="javascript:void()">2</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:void()">3</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:void()">4</a></li>
-                    <li class="page-item page-indicator">
-                        <a class="page-link" href="javascript:void()">
-                        <i class="icon-arrow-right"></i></a>
-                    </li>
-                </ul>
-            </nav>
-            </div>
+                {{ $posts->links('pagination.pagination') }}
             </div>
         </div>
         <!--**********************************
