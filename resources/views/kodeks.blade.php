@@ -16,15 +16,14 @@
   <title>Kodeks | Gimnazija Visoko</title>
 </head>
 <body>
+
    @include('layout.header')
-<div class="hero">
-      <div class="naslov-box">
-            <p class="naslov">KODEKS</p>
-      </div> 
-    </div>
-  <section class="about-section">
-    
    
+   <div class="hero">
+      <h2 class="naslov">KODEKS</h2>
+   </div>
+
+  <section class="about-section">
     <div class="main">
       <h2>Kodeks zaposlenika</h2>
 <div class="kodeks-text">

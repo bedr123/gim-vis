@@ -17,9 +17,7 @@
 @include('layout.header')
 
   <div class="hero">
-      <div class="naslov-box">
-            <p class="naslov">O ŠKOLI</p>
-      </div> 
+      <h2 class="naslov">O ŠKOLI</h2>
   </div>
 
   <section class="about-section">   

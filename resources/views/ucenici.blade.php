@@ -19,11 +19,9 @@
 
 @include('layout.header')
 
-    <div class="hero">
-      <div class="naslov-box">
-            <p class="naslov">Učenici Škole</p>
-      </div>
-    </div>
+  <div class="hero">
+      <h2 class="naslov">UČENICI</h2>
+  </div>
 
     <div class="main1">
       <div class="products">
