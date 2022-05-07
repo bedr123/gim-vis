@@ -23,11 +23,11 @@
           <button class="item">Nastava</button>
           <ul class="dropdown">
             <li><a href="{{ config('app.url') . '/kalendar' }}">Kalendar</a></li>
-            <li><a href="#">Nastavni planovi</a></li>
-            <li><a href="#">Raspored</a></li>
-            <li><a href="#">Aktivi</a></li>
-            <li><a href="#">Sekcije</a></li>
-            <li><a href="#">Projekti</a></li>
+            <li><a href="{{ config('app.url') . '/planovi' }}">Nastavni planovi</a></li>
+            <li><a href="{{ config('app.url') . '/raspored' }}">Raspored</a></li>
+            <li><a href="{{ config('app.url') . '/aktivi' }}">Aktivi</a></li>
+            <li><a href="{{ config('app.url') . '/sekcije' }}">Sekcije</a></li>
+            <li><a href="{{ config('app.url') . '/projekti' }}">Projekti</a></li>
           </ul>
         </li>
         <li class="navbar__item">

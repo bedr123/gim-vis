@@ -49,4 +49,29 @@ class PagesController extends Controller
     {
         return view('kontakt');
     }
+
+    public function kalendar()
+    {
+        return view('kalendar');
+    }
+    
+    public function raspored()
+    {
+        return view('raspored');
+    }
+
+    public function projekti()
+    {
+        return view('projekti');
+    }
+
+    public function aktivi()
+    {
+        return view('aktivi');
+    }
+
+    public function sekcije()
+    {
+        return view('sekcije');
+    }
 }

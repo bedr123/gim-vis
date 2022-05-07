@@ -48,6 +48,16 @@ Route::get('novosti', [PostsController::class, 'getAllPosts']);
 
 Route::get('novosti/{slug}', [PostsController::class, 'showSinglePost']);
 
+Route::get('kalendar', [PagesController::class, 'kalendar']);
+
+Route::get('projekti', [PagesController::class, 'projekti']);
+
+Route::get('raspored', [PagesController::class, 'raspored']);
+
+Route::get('sekcije', [PagesController::class, 'sekcije']);
+
+Route::get('aktivi', [PagesController::class, 'aktivi']);
+
 Route::get('prijava', [LoginController::class, 'showLogin']);
 Route::post('prijava', [LoginController::class, 'login'])->name('login');
 
