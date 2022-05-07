@@ -24,7 +24,9 @@ class StoreProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'naziv' => 'required|string',
+            'slika' => 'required|mimes:png,jpeg,jpg',
+            'kontent' => 'required'
         ];
     }
 }

@@ -24,7 +24,11 @@ class StoreAssetRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'naziv' => 'required|string',
+            'kontent' => 'required',
+            'predsjednik' => 'required',
+            'clanovi' => 'array',
+            'clanovi.*' => 'integer'
         ];
     }
 }

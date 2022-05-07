@@ -24,7 +24,9 @@ class UpdateProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'naziv' => '',
+            'slika' => 'mimes:png,jpeg,jpg',
+            'kontent' => ''
         ];
     }
 }

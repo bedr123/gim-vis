@@ -54,13 +54,13 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Dodaj uposlenika</h4>
-                            <span class="ml-1">Uposlenici</span>
+                            <h4>Dodaj sekciju</h4>
+                            <span class="ml-1">Sekcije</span>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Uposlenici</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Sekcije</a></li>
                             <li class="breadcrumb-item active"><a href="javascript:void(0)">Kreiraj</a></li>
                         </ol>
                     </div>
@@ -78,68 +78,66 @@
                                         @csrf
                                         <div class="form-group">
                                             <label for="" class="select2-container">
-                                                Ime i prezime <br>
+                                                Naziv <br>
 
-                                                <input type="text" name="ime_i_prezime" class="form-control input-default " placeholder="Ime i prezime profesora">
-                                                @error('ime_i_prezime') <span class="text-danger">{{ $message }}</span> @enderror
-                                            </label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="select2-label select2-container">
-                                                informacije <br>
-
-                                                <textarea class="text-editor" name="informacije" id="" cols="30" rows="10"></textarea>
-                                                @error('informacije') <span class="text-danger">{{ $message }}</span> @enderror
-                                            </label>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label for="custom-file" class="select2-label select2-container">
-                                                Slika <br>
-
-                                                <div class="input-group mb-3">
-                                                    <div class="custom-file">
-                                                        <input type="file" name="slika" class="custom-file-input form-control input-default" id="custom-file">
-                                                        <label class="custom-file-label">Izaberi fajl</label>
-                                                    </div>
-                                                </div>
-                                                @error('slika') <span class="text-danger">{{ $message }}</span> @enderror
+                                                <input type="text" name="naziv" class="form-control input-default " placeholder="Naziv sekcije">
+                                                @error('naziv') <span class="text-danger">{{ $message }}</span> @enderror
                                             </label>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="select2-label select2-container" for="id_label_single">
-                                                Uloga <br>
+                                                Kategorija <br>
             
-                                                <select name="uloga" class="select2-with-label-single js-states d-block form-control input-default" id="id_label_single">
-                                                    <option disabled selected value>izaberi ulogu</option>
-                                                    <option value="uprava">Uprava</option>
-                                                    <option value="profesori">Profesor</option>
-                                                    <option value="tehnicko_osoblje">Tehnicko osoblje</option>
+                                                <select name="kategorija" class="select2-with-label-single js-states d-block form-control input-default" id="id_label_single">
+                                                    <option disabled selected value>izaberi kategoriju u koju spada sekcija</option>
+                                                    <option value="kulturno-umjetnicke">Kulturno-umjetničke</option>
+                                                    <option value="znanstveno-tehničke_i-nastavne">Znanstveno-tehničke i nastavne</option>
+                                                    <option value="sportske">Sportske</option>
+                                                    <option value="ostalo">Ostalo</option>
                                                 </select>
-                                                @error('uloga') <span class="text-danger">{{ $message }}</span> @enderror
+                                                @error('kategorija') <span class="text-danger">{{ $message }}</span> @enderror
                                             </label>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="" class="select2-container">
-                                                Opis posla <br>
+                                                Broj Grupa <br>
 
-                                                <input type="text" name="opis_posla" class="form-control input-default " placeholder="Unesite opis posla">
-                                                @error('opis_posla') <span class="text-danger">{{ $message }}</span> @enderror
+                                                <input type="text" name="broj_grupa" class="form-control input-default " placeholder="Broj Grupa">
+                                                @error('broj_grupa') <span class="text-danger">{{ $message }}</span> @enderror
                                             </label>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="select2-label select2-container" for="id_label_single1">
-                                                Kategorija <br>
-            
-                                                <select name="kategorija" class="select2-with-label-single js-states d-block form-control input-default" id="id_label_single1">
-                                                    <option disabled selected value>izaberi kategoriju u koju spada uposlenik</option>
-                                                    <option value="sadasnji_radnici">Sadasnji radnik</option>
-                                                    <option value="pocasni_profesori">Pocasni profesor</option>
+                                                Profesor <br>
+                                        
+                                                <select name="profesori[]" class="select2-with-label-single js-states d-block form-control input-default" id="id_label_single1">
+                                                    <option disabled selected value>izaberi profesora</option>
+                                                    @foreach($employees as $employee)
+                                                        <option value="{{ $employee->id }}">{{ $employee->ime_i_prezime }}</option>
+                                                    @endforeach
                                                 </select>
-                                                @error('kategorija') <span class="text-danger">{{ $message }}</span> @enderror
+                                                @error('profesori') <span class="text-danger">{{ $message }}</span> @enderror
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="" class="select2-container">
+                                                Broj Učenika <br>
+
+                                                <input type="text" name="broj_ucenika" class="form-control input-default " placeholder="Broj Učenika">
+                                                @error('broj_ucenika') <span class="text-danger">{{ $message }}</span> @enderror
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="" class="select2-container">
+                                                Sedmični fond sati <br>
+
+                                                <input type="text" name="sedmicni_fond_sati" class="form-control input-default " placeholder="Sedmični fond sati">
+                                                @error('sedmicni_fond_sati') <span class="text-danger">{{ $message }}</span> @enderror
                                             </label>
                                         </div>
                                         <button type="submit" class="btn btn-primary mt-3">Dodaj</button>

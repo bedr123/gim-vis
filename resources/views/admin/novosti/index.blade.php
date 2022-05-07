@@ -103,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-                {{ $posts->links('pagination.pagination') }}
+                {{ $posts->links('admin.pagination.pagination') }}
             </div>
         </div>
         <!--**********************************

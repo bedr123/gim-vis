@@ -101,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-                {{ $directions->links('pagination.pagination') }}
+                {{ $directions->links('admin.pagination.pagination') }}
             </div>
         </div>
         <!--**********************************

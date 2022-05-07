@@ -20,7 +20,6 @@ class CreateSectionsTable extends Migration
             $table->integer('broj_grupa');
             $table->integer('broj_ucenika');
             $table->integer('sedmicni_fond_sati');
-            $table->longText('ime_i_prezime_profesora');
             $table->timestamps();
         });
     }

@@ -50,12 +50,12 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Uposlenici Gimnazije</h4>
-                            <p class="mb-0">Dodaj nove uposlenike</p>
+                            <h4>Aktivi profesora</h4>
+                            <p class="mb-0">Dodaj nove aktive</p>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                    <a href="{{ config('app.url') . '/admin/aktivi/kreiraj' }}"><button class="btn badge-primary">Dodaj uposlenika</button></a>
+                    <a href="{{ config('app.url') . '/admin/aktivi/kreiraj' }}"><button class="btn badge-primary">Dodaj aktiv</button></a>
                     </div>
                 </div>
 
@@ -63,7 +63,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">SVI UPOSLENICI</h4>
+                                <h4 class="card-title">SVI AKTIVI</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -71,36 +71,27 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Ime i prezime</th>
-                                                <th>Slika</th>
-                                                <th>Uloga</th>
-                                                <th>Opis Posla</th>
-                                                <th>Informacije</th>
-                                                <th>Kategorija</th>
+                                                <th>Naziv</th>
+                                                <th>Predsjednik</th>
                                                 <th>Akcije</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            
+                                            @foreach($assets as $asset)
                                             <tr>
-                                                <th></th>
-                                                <td></td>
-                                                <td>
-                                                    <img height="200px" src="" />
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="d-flex flex-column align-items-start">
-                                                    <a href=""><button class="btn btn-success my-2">Uredi</button></a>
-                                                    <form action="" method="POST">
+                                                <th>{{ $loop->index + 1 }}</th>
+                                                <th>{{ $asset->naziv }}</th>
+                                                <th>{{ $asset->admin->employee->ime_i_prezime }}</th>
+                                                <th class="d-flex flex-column align-items-start">
+                                                    <a href="{{ config('app.url') . '/admin/aktivi/' . $asset->id . '/uredi' }}"><button class="btn btn-success my-2">Uredi</button></a>
+                                                    <form action="{{ config('app.url') . '/admin/aktivi/' . $asset->id }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger">Obriši</button>
                                                     </form>
-                                                </td>
+                                                </th>
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -108,7 +99,7 @@
                         </div>
                     </div>
                 </div>
-                {{ $assets->links('pagination.pagination') }}
+                {{ $assets->links('admin.pagination.pagination') }}
             </div>            
         </div>
         <!--**********************************

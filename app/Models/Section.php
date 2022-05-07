@@ -4,10 +4,33 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Section extends Model
 {
-    use HasFactory;
+    use HasFactory, Sluggable;
 
-    protected $fillable = ['naziv', 'tip', 'broj_grupa', 'broj_ucenika', 'sedmicni_fond_sati', 'ime_i_prezime_profesora'];
+    protected $fillable = [
+        'naziv', 
+        'kategorija', 
+        'broj_grupa', 
+        'broj_ucenika', 
+        'sedmicni_fond_sati', 
+        'profesori',
+        'slug'
+    ];
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'naziv'
+            ]
+        ];
+    }
+
+    public function employees()
+    {
+        return $this->belongsToMany(Employee::class);
+    }
 }

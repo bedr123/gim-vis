@@ -24,7 +24,11 @@ class UpdateAssetRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'naziv' => '',
+            'kontent' => '',
+            'predsjednik' => 'required',
+            'clanovi' => 'array',
+            'clanovi.*' => 'integer'
         ];
     }
 }

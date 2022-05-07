@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class AssetAdmin extends Model
+{
+    use HasFactory;
+
+    protected $table = 'asset_admins';
+
+    protected $fillable = ['asset_id', 'employee_id'];
+
+    protected $hidden = [
+        'pivot',
+    ];
+
+    public function employee()
+    {
+        return $this->belongsTo(Employee::class, 'employee_id', 'id');
+    }
+}

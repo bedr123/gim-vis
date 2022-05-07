@@ -50,12 +50,12 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Uposlenici Gimnazije</h4>
-                            <p class="mb-0">Dodaj nove uposlenike</p>
+                            <h4>Sekcije Gimnazije</h4>
+                            <p class="mb-0">Dodaj nove sekcije</p>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <a href="{{ config('app.url') . '/admin/sekcije/kreiraj' }}"><button class="btn badge-primary">Dodaj uposlenika</button></a>
+                        <a href="{{ config('app.url') . '/admin/sekcije/kreiraj' }}"><button class="btn badge-primary">Dodaj sekciju</button></a>
                     </div>
                 </div>
 
@@ -63,7 +63,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">SVI UPOSLENICI</h4>
+                                <h4 class="card-title">SVE SEKCIJEA</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -71,36 +71,35 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Ime i prezime</th>
-                                                <th>Slika</th>
-                                                <th>Uloga</th>
-                                                <th>Opis Posla</th>
-                                                <th>Informacije</th>
+                                                <th>Naziv</th>
                                                 <th>Kategorija</th>
+                                                <th>Broj grupa</th>
+                                                <th>Broj učenika</th>
+                                                <th>Sedmični fond sati</th>
+                                                <th>Profesori</th>
                                                 <th>Akcije</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            
+                                            @foreach($sections as $section)
                                             <tr>
-                                                <th></th>
-                                                <td></td>
-                                                <td>
-                                                    <img height="200px" src="" />
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="d-flex flex-column align-items-start">
-                                                    <a href=""><button class="btn btn-success my-2">Uredi</button></a>
-                                                    <form action="" method="POST">
+                                                <th>{{ $loop->index + 1 }}</th>
+                                                <th>{{ $section->naziv }}</th>
+                                                <th>{{ $section->kategorija }}</th>
+                                                <th>{{ $section->broj_grupa }}</th>
+                                                <th>{{ $section->broj_ucenika }}</th>
+                                                <th>{{ $section->sedmicni_fond_sati }}</th>
+                                                <th>{{ $section->profesori }}</th>
+                                                <th class="d-flex flex-column align-items-start">
+                                                    <a href="{{ config('app.url') . '/admin/sekcije/' . $section->id . '/uredi' }}"><button class="btn btn-success my-2">Uredi</button></a>
+                                                    <form action="{{ config('app.url') . '/admin/sekcije/' . $section->id }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger">Obriši</button>
                                                     </form>
-                                                </td>
+                                                </th>
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -108,7 +107,7 @@
                         </div>
                     </div>
                 </div>
-                {{ $sections->links('pagination.pagination') }}
+                {{ $sections->links('admin.pagination.pagination') }}
             </div>            
         </div>
         <!--**********************************

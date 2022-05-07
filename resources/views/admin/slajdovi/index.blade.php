@@ -107,7 +107,7 @@
                         </div>
                     </div>
                 </div>
-                {{ $slides->links('pagination.pagination') }}
+                {{ $slides->links('admin.pagination.pagination') }}
             </div>
         </div>
         <!--**********************************

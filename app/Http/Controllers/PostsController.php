@@ -46,8 +46,8 @@ class PostsController extends Controller
 
         $post = Post::create($data);
 
-        if (isset($data['employees'])) {
-            foreach ($data['employees'] as $employeeId) {
+        if (isset($data['uposlenici'])) {
+            foreach ($data['uposlenici'] as $employeeId) {
                 $post->employees()->attach($employeeId);
             }
         }
@@ -66,9 +66,10 @@ class PostsController extends Controller
 
     public function edit($postId)
     {
+        $employees = Employee::all();
         $post = Post::findOrFail($postId);
 
-        return view('admin/novosti/uredi')->with('post', $post);
+        return view('admin/novosti/uredi')->with('post', $post)->with('employees', $employees);
     }
 
     public function update(UpdatePostRequest $request, $postId)
@@ -96,6 +97,13 @@ class PostsController extends Controller
         }
         
         $post->update($data);
+
+        if (isset($data['uposlenici'])) {
+            $post->employees()->detach();
+            foreach ($data['uposlenici'] as $employeeId) {
+                $post->employees()->attach($employeeId);
+            }
+        }
 
         return redirect(config('app.url') . '/admin/novosti')->with([
             'message' => 'Uspjesno spremljeno!'

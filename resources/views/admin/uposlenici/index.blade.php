@@ -109,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                {{ $employees->links('pagination.pagination') }}
+                {{ $employees->links('admin.pagination.pagination') }}
             </div>            
         </div>
         <!--**********************************

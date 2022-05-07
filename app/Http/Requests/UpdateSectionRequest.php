@@ -24,7 +24,12 @@ class UpdateSectionRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'naziv' => '', 
+            'kategorija' => 'in: "kulturno-umjetnicke", "znanstveno-tehničke_i-nastavne", "sportske", "ostalo"', 
+            'broj_grupa' => '', 
+            'broj_ucenika' => '', 
+            'sedmicni_fond_sati' => '', 
+            'profesori' => '',
         ];
     }
 }

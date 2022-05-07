@@ -24,7 +24,12 @@ class StoreSectionRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'naziv' => 'required|string', 
+            'kategorija' => 'required|in: "kulturno-umjetnicke", "znanstveno-tehničke_i-nastavne", "sportske", "ostalo"', 
+            'broj_grupa' => 'required|integer', 
+            'broj_ucenika' => 'required|integer', 
+            'sedmicni_fond_sati' => 'required|integer', 
+            'profesori' => 'required|array',
         ];
     }
 }

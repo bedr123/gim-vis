@@ -54,13 +54,13 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Dodaj uposlenika</h4>
-                            <span class="ml-1">Uposlenici</span>
+                            <h4>Dodaj novi aktiv</h4>
+                            <span class="ml-1">Aktivi</span>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Uposlenici</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Aktivi</a></li>
                             <li class="breadcrumb-item active"><a href="javascript:void(0)">Kreiraj</a></li>
                         </ol>
                     </div>
@@ -74,72 +74,48 @@
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form method="POST" action="{{ config('app.url') . '/admin/uposlenici' }}" enctype='multipart/form-data'>
+                                    <form method="POST" action="{{ config('app.url') . '/admin/aktivi' }}" enctype='multipart/form-data'>
                                         @csrf
                                         <div class="form-group">
                                             <label for="" class="select2-container">
-                                                Ime i prezime <br>
+                                                Naziv <br>
 
-                                                <input type="text" name="ime_i_prezime" class="form-control input-default " placeholder="Ime i prezime profesora">
-                                                @error('ime_i_prezime') <span class="text-danger">{{ $message }}</span> @enderror
+                                                <input type="text" name="naziv" class="form-control input-default " placeholder="Naziv aktiva">
+                                                @error('naziv') <span class="text-danger">{{ $message }}</span> @enderror
                                             </label>
                                         </div>
                                         <div class="form-group">
                                             <label class="select2-label select2-container">
-                                                informacije <br>
+                                                Kontent <br>
 
-                                                <textarea class="text-editor" name="informacije" id="" cols="30" rows="10"></textarea>
-                                                @error('informacije') <span class="text-danger">{{ $message }}</span> @enderror
+                                                <textarea class="text-editor" name="kontent" id="" cols="30" rows="10"></textarea>
+                                                @error('kontent') <span class="text-danger">{{ $message }}</span> @enderror
                                             </label>
                                         </div>
                                         
                                         <div class="form-group">
-                                            <label for="custom-file" class="select2-label select2-container">
-                                                Slika <br>
-
-                                                <div class="input-group mb-3">
-                                                    <div class="custom-file">
-                                                        <input type="file" name="slika" class="custom-file-input form-control input-default" id="custom-file">
-                                                        <label class="custom-file-label">Izaberi fajl</label>
-                                                    </div>
-                                                </div>
-                                                @error('slika') <span class="text-danger">{{ $message }}</span> @enderror
-                                            </label>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="select2-label select2-container" for="id_label_single">
-                                                Uloga <br>
-            
-                                                <select name="uloga" class="select2-with-label-single js-states d-block form-control input-default" id="id_label_single">
-                                                    <option disabled selected value>izaberi ulogu</option>
-                                                    <option value="uprava">Uprava</option>
-                                                    <option value="profesori">Profesor</option>
-                                                    <option value="tehnicko_osoblje">Tehnicko osoblje</option>
+                                            <label class="select2-label select2-container" for="id_label_multiple">
+                                                Predsjednik <br>
+                                                             
+                                                <select name="predsjednik" class="select2-with-label-multiple js-states form-control input-default" id="id_label_multiple">
+                                                    <option disabled selected value>izaberi predsjednika</option>
+                                                    @foreach($employees as $employee)
+                                                        <option value="{{ $employee->id }}">{{ $employee->ime_i_prezime }}</option>
+                                                    @endforeach
                                                 </select>
-                                                @error('uloga') <span class="text-danger">{{ $message }}</span> @enderror
                                             </label>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="" class="select2-container">
-                                                Opis posla <br>
-
-                                                <input type="text" name="opis_posla" class="form-control input-default " placeholder="Unesite opis posla">
-                                                @error('opis_posla') <span class="text-danger">{{ $message }}</span> @enderror
-                                            </label>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="select2-label select2-container" for="id_label_single1">
-                                                Kategorija <br>
-            
-                                                <select name="kategorija" class="select2-with-label-single js-states d-block form-control input-default" id="id_label_single1">
-                                                    <option disabled selected value>izaberi kategoriju u koju spada uposlenik</option>
-                                                    <option value="sadasnji_radnici">Sadasnji radnik</option>
-                                                    <option value="pocasni_profesori">Pocasni profesor</option>
+                                            <label class="select2-label select2-container" for="id_label_multiple1">
+                                                Članovi <br>
+                                                             
+                                                <select name="clanovi[]" class="select2-with-label-multiple js-states form-control input-default" id="id_label_multiple1"
+                                                    multiple="multiple">
+                                                    @foreach($employees as $employee)
+                                                        <option value="{{ $employee->id }}">{{ $employee->ime_i_prezime }}</option>
+                                                    @endforeach
                                                 </select>
-                                                @error('kategorija') <span class="text-danger">{{ $message }}</span> @enderror
                                             </label>
                                         </div>
                                         <button type="submit" class="btn btn-primary mt-3">Dodaj</button>

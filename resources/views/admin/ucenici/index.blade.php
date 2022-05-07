@@ -105,7 +105,7 @@
                         </div>
                     </div>
                 </div>
-                {{ $students->links('pagination.pagination') }}
+                {{ $students->links('admin.pagination.pagination') }}
             </div>
         </div>
         <!--**********************************
