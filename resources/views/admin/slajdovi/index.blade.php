@@ -50,12 +50,13 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Slider</h4>
+                            <h4>Slajdovi</h4>
                             <p class="mb-0">Uredi i dodaj nove slajdove</p>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <a href="{{ config('app.url') . '/admin/slajdovi/kreiraj' }}"><button class="btn badge-primary">Dodaj novi slide</button></a>
+                        <a href="{{ config('app.url') . '/admin/slajdovi/kreiraj' }}"><button type="button" class="btn btn-rounded btn-primary pr-4"><span
+                        class="btn-icon-left text-primary"><i class="fa fa-plus color-primary"></i></span>Dodaj novi slajd</button></a>
                     </div>
                 </div>
 

@@ -55,7 +55,8 @@
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <a href="{{ config('app.url') . '/admin/sekcije/kreiraj' }}"><button class="btn badge-primary">Dodaj sekciju</button></a>
+                        <a href="{{ config('app.url') . '/admin/sekcije/kreiraj' }}"><button type="button" class="btn btn-rounded btn-primary pr-4"><span
+                        class="btn-icon-left text-primary"><i class="fa fa-plus color-primary"></i></span>Dodaj sekciju</button></a>
                     </div>
                 </div>
 

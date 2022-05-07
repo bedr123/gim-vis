@@ -50,12 +50,13 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Smijerovi</h4>
-                            <p class="mb-0">Uredi i dodaj nove smijerove</p>
+                            <h4>Smjerovi</h4>
+                            <p class="mb-0">Uredi i dodaj nove smjerove</p>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <a href="{{ config('app.url') . '/admin/smjerovi/kreiraj' }}"><button class="btn badge-primary">Dodaj novi smijer</button></a>
+                        <a href="{{ config('app.url') . '/admin/smjerovi/kreiraj' }}"><button type="button" class="btn btn-rounded btn-primary pr-4"><span
+                        class="btn-icon-left text-primary"><i class="fa fa-plus color-primary"></i></span>Dodaj smijer</button></a>
                     </div>
                 </div>
 
