@@ -12,8 +12,6 @@
                         class="nav-text">Slajdovi</span></a></li>
             <li><a href="{{ config('app.url') . '/admin/smjerovi' }}" aria-expanded="false"><i class="icon icon-globe-2"></i><span
                         class="nav-text">Smjerovi</span></a></li>
-            <li><a href="{{ config('app.url') . '/admin/kategorije' }}" aria-expanded="false"><i class="icon icon-globe-2"></i><span
-                        class="nav-text">Kategorije</span></a></li>
             <li><a href="{{ config('app.url') . '/admin/novosti' }}" aria-expanded="false"><i class="icon icon-globe-2"></i><span
                         class="nav-text">Novosti</span></a></li>
             <li><a href="{{ config('app.url') . '/admin/uposlenici' }}" aria-expanded="false"><i class="icon icon-globe-2"></i><span

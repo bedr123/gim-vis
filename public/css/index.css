@@ -282,6 +282,29 @@ section {
     padding: 1.2rem;
 }
 
+/* PROJEKTI SEKCIJE AKTIVI */
+.card-list__container {
+    max-width: 1150px;
+    margin-inline: auto;
+}
+
+.card-list__card {
+    background-color: #191c21;
+    margin: 1rem 0;
+    padding: 0.8rem;
+}
+
+.card-list__card h4 {
+    font: 500 1.2rem var(--raleway);
+    color: var(--light-yellow);
+    text-transform: uppercase;
+}
+
+.card-list__card a {
+    font: 500 2.5rem var(--roboto);
+    color: #fff;
+}
+
 /* FOOTER STYLES START */
 footer {
     background: #191c21;

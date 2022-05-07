@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gimnazija Visoko | Projekti</title>
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/projekti.css') }}" />
     <link rel="icon" href="{{ asset('/assets/images/logo u boji.png') }}" />
 </head>
 <body>
@@ -17,19 +16,19 @@
       <h2 class="naslov">Projekti</h2>
   </div>
 
-  <section class="projekti__section">
-      <div class="projekti__container">
-          <div class="projekti__card">
+  <section class="card-list__section">
+      <div class="card-list__container">
+          <div class="card-list__card">
               <h4>PROJEKAT</h4>
-              <h1>Eko Škola</h1>
+              <a href="#">Eko Škola</a>
           </div>
-          <div class="projekti__card">
+          <div class="card-list__card">
               <h4>PROJEKAT</h4>
-              <h1>Projekat dva</h1>
+              <a href="#">Eko Škola</a>
           </div>
-          <div class="projekti__card">
+          <div class="card-list__card">
               <h4>PROJEKAT</h4>
-              <h1>Projekat tri</h1>
+              <a href="#">Eko Škola</a>
           </div>
       </div>
   </section>

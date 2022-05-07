@@ -16,6 +16,23 @@
       <h2 class="naslov">SEKCIJE</h2>
 </div>
 
+<section class="card-list__section">
+      <div class="card-list__container">
+          <div class="card-list__card">
+              <h4>SEKCIJE</h4>
+              <a href="#">Sekcija Jedan</a>
+          </div>
+          <div class="card-list__card">
+              <h4>SEKCIJE</h4>
+              <a href="#">Sekcija Dva</a>
+          </div>
+          <div class="card-list__card">
+              <h4>SEKCIJE</h4>
+              <a href="#">Sekcija Tri</a>
+          </div>
+      </div>
+  </section>
+
 @include('layout.footer')
     
 </body>
