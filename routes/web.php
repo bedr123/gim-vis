@@ -53,17 +53,15 @@ Route::get('novosti', [PostsController::class, 'getAllPosts']);
 
 Route::get('novosti/{slug}', [PostsController::class, 'showSinglePost']);
 
-<<<<<<< HEAD
-Route::get('kalendar', [PagesController::class, 'kalendar']);
+//Route::get('kalendar', [PagesController::class, 'kalendar']);
 
-Route::get('projekti', [PagesController::class, 'projekti']);
+//Route::get('projekti', [PagesController::class, 'projekti']);
 
 Route::get('raspored', [PagesController::class, 'raspored']);
 
-Route::get('sekcije', [PagesController::class, 'sekcije']);
+//Route::get('sekcije', [PagesController::class, 'sekcije']);
 
 Route::get('aktivi', [PagesController::class, 'aktivi']);
-=======
 Route::get('kalendar', [CalendarController::class, 'showCalendar']);
 
 Route::get('raspored', [ScheduleController::class, 'showSchedule']);
@@ -79,7 +77,6 @@ Route::get('aktivi/{slug}', [AssetsController::class, 'showSingleAsset']);
 Route::get('projekti', [ProjectsController::class, 'getAllProjects']);
 
 Route::get('projekti/{slug}', [ProjectsController::class, 'showSingleProject']);
->>>>>>> f4cd3c29121e732d0fe7ef2d9c337245866c1569
 
 Route::get('prijava', [LoginController::class, 'showLogin']);
 Route::post('prijava', [LoginController::class, 'login'])->name('login');

@@ -16,14 +16,21 @@
             <li><a href="{{ config('app.url') . '/historija' }}">Historijat škole</a></li>
             <li><a href="{{ config('app.url') . '/kodeks' }}">Kodeks</a></li>
             <!-- DROPDOWN IN DROPDOWN -->
-            <li class="nested-dropdown-container">
+            <li>
               <button class="nested-dropdown-item">Uposlenici</button>
               <ul class="nested-dropdown">
                 <li><a href="{{ config('app.url') . '/uposlenici' }}">Sadašnji radnici</a></li>
                 <li><a href="#">Počasni profesori</a></li>
               </ul>
             </li>
-            <li><a href="{{ config('app.url') . '/ucenici' }}">Učenici</a></li>
+            <!-- DROPDOWN IN DROPDOWN -->
+            <li>
+              <button class="nested-dropdown-item">Učenici</button>
+              <ul class="nested-dropdown">
+                <li><a href="{{ config('app.url') . '/ucenici' }}">Talentovani učenici</a></li>
+                <li><a href="#">Alumni Gimnazije</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li class="navbar__item">
