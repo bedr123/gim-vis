@@ -90,12 +90,12 @@ section {
     padding: 0.5rem 1.5rem 0.5rem;
     background-color: #fff;
     z-index: 99;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
 }
 
 .navbar.sticky {
     position: fixed;
     transform: translateY(-100%);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
 }
 
 .navbar.slide {
