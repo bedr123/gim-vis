@@ -2,6 +2,7 @@
     background: none;
     color: #fff;
     padding: 1rem 1.5rem 1rem;
+    box-shadow: none;
 }
 
 .navbar.active {
@@ -23,6 +24,7 @@ button.item {
 .navbar.sticky {
     background-color: #fff;
     padding: 0.5rem 1.5rem 0.5rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
 }
 
 .navbar.sticky,
