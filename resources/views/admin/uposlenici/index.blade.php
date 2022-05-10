@@ -55,7 +55,8 @@
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <button class="btn badge-primary">Dodaj uposlenika</button>
+                        <a href="{{ config('app.url') . '/admin/uposlenici/kreiraj' }}"><button type="button" class="btn btn-rounded btn-primary pr-4"><span
+                        class="btn-icon-left text-primary"><i class="fa fa-plus color-primary"></i></span>Dodaj uposlenika</button></a>
                     </div>
                 </div>
 
@@ -84,22 +85,22 @@
                                             @foreach($employees as $employee)
                                                 <tr>
                                                     <th>{{ $loop->index + 1 }}</th>
-                                                    <td>{{ $employee->ime_i_prezime }}</td>
-                                                    <td>
+                                                    <th>{{ $employee->ime_i_prezime }}</th>
+                                                    <th>
                                                         <img height="200px" src="{{ $employee->slika }}" />
-                                                    </td>
-                                                    <td>{{ $employee->uloga }}</td>
-                                                    <td>{{ $employee->opis_posla }}</td>
-                                                    <td>{{ $employee->informacije }}</td>
-                                                    <td>{{ $employee->kategorija }}</td>
-                                                    <td class="d-flex flex-column align-items-start">
+                                                    </th>
+                                                    <th>{{ $employee->uloga }}</th>
+                                                    <th>{{ $employee->opis_posla }}</th>
+                                                    <th>{!! $employee->informacije !!}</th>
+                                                    <th>{{ $employee->kategorija }}</th>
+                                                    <th class="d-flex flex-column align-items-start">
                                                         <a href="{{ config('app.url') . '/admin/uposlenici/' . $employee->id . '/uredi' }}"><button class="btn btn-success my-2">Uredi</button></a>
                                                         <form action="{{ config('app.url') . '/admin/uposlenici/' . $employee->id }}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger">Obriši</button>
                                                         </form>
-                                                    </td>
+                                                    </th>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -109,24 +110,7 @@
                         </div>
                     </div>
                 </div>
-                <nav>
-                <ul class="pagination justify-content-center">
-                    <li class="page-item page-indicator">
-                        <a class="page-link" href="javascript:void()">
-                        <i class="icon-arrow-left"></i></a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="javascript:void()">1</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="javascript:void()">2</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:void()">3</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:void()">4</a></li>
-                    <li class="page-item page-indicator">
-                        <a class="page-link" href="javascript:void()">
-                        <i class="icon-arrow-right"></i></a>
-                    </li>
-                </ul>
-            </nav>
-            </div>
+                {{ $employees->links('admin.pagination.pagination') }}
             </div>            
         </div>
         <!--**********************************

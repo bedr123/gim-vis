@@ -20,6 +20,16 @@
                         class="nav-text">Učenici</span></a></li>
             <li><a href="{{ config('app.url') . '/admin/galerija' }}" aria-expanded="false"><i class="icon icon-globe-2"></i><span
                         class="nav-text">Galerija</span></a></li>
+            <li><a href="{{ config('app.url') . '/admin/kalendar' }}" aria-expanded="false"><i class="icon icon-globe-2"></i><span
+                        class="nav-text">Kalendar</span></a></li>
+            <li><a href="{{ config('app.url') . '/admin/raspored' }}" aria-expanded="false"><i class="icon icon-globe-2"></i><span
+                        class="nav-text">Raspored</span></a></li>
+            <li><a href="{{ config('app.url') . '/admin/sekcije' }}" aria-expanded="false"><i class="icon icon-globe-2"></i><span
+                        class="nav-text">Sekcije</span></a></li>
+            <li><a href="{{ config('app.url') . '/admin/aktivi' }}" aria-expanded="false"><i class="icon icon-globe-2"></i><span
+                        class="nav-text">Aktivi</span></a></li>
+            <li><a href="{{ config('app.url') . '/admin/projekti' }}" aria-expanded="false"><i class="icon icon-globe-2"></i><span
+                        class="nav-text">Projekti</span></a></li>
         </ul>
     </div>
 </div>

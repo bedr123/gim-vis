@@ -14,6 +14,11 @@ use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\AssetsController;
+use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\SectionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +53,7 @@ Route::get('novosti', [PostsController::class, 'getAllPosts']);
 
 Route::get('novosti/{slug}', [PostsController::class, 'showSinglePost']);
 
+<<<<<<< HEAD
 Route::get('kalendar', [PagesController::class, 'kalendar']);
 
 Route::get('projekti', [PagesController::class, 'projekti']);
@@ -57,6 +63,23 @@ Route::get('raspored', [PagesController::class, 'raspored']);
 Route::get('sekcije', [PagesController::class, 'sekcije']);
 
 Route::get('aktivi', [PagesController::class, 'aktivi']);
+=======
+Route::get('kalendar', [CalendarController::class, 'showCalendar']);
+
+Route::get('raspored', [ScheduleController::class, 'showSchedule']);
+
+Route::get('sekcije', [SectionsController::class, 'getAllSections']);
+
+Route::get('sekcije/{slug}', [SectionsController::class, 'showSingleSection']);
+
+Route::get('aktivi', [AssetsController::class, 'getAllAssets']);
+
+Route::get('aktivi/{slug}', [AssetsController::class, 'showSingleAsset']);
+
+Route::get('projekti', [ProjectsController::class, 'getAllProjects']);
+
+Route::get('projekti/{slug}', [ProjectsController::class, 'showSingleProject']);
+>>>>>>> f4cd3c29121e732d0fe7ef2d9c337245866c1569
 
 Route::get('prijava', [LoginController::class, 'showLogin']);
 Route::post('prijava', [LoginController::class, 'login'])->name('login');
@@ -104,6 +127,37 @@ Route::prefix('admin')->group(function () {
         Route::get('galerija/{id}', [GalleryController::class, 'showGallery']);
         Route::post('galerija/{id}', [GalleryController::class, 'store']);
         Route::delete('galerija/{id}/slika/{imageId}', [GalleryController::class, 'deleteImage']);
+
+        Route::get('kalendar', [CalendarController::class, 'index']);
+        Route::get('kalendar/kreiraj', [CalendarController::class, 'create']);
+        Route::post('kalendar', [CalendarController::class, 'store']);
+        Route::delete('kalendar/{calendarId}', [CalendarController::class, 'destroy']);
+
+        Route::get('raspored', [ScheduleController::class, 'index']);
+        Route::get('raspored/kreiraj', [ScheduleController::class, 'create']);
+        Route::post('raspored', [ScheduleController::class, 'store']);
+        Route::delete('raspored/{scheduleId}', [ScheduleController::class, 'destroy']);
+
+        Route::get('projekti', [ProjectsController::class, 'index']);
+        Route::get('projekti/kreiraj', [ProjectsController::class, 'create']);
+        Route::post('projekti', [ProjectsController::class, 'store']);
+        Route::get('projekti/{projectId}/uredi', [ProjectsController::class, 'edit']);
+        Route::put('projekti/{projectId}', [ProjectsController::class, 'update']);
+        Route::delete('projekti/{projectId}', [ProjectsController::class, 'delete']);
+
+        Route::get('aktivi', [AssetsController::class, 'index']);
+        Route::get('aktivi/kreiraj', [AssetsController::class, 'create']);
+        Route::post('aktivi', [AssetsController::class, 'store']);
+        Route::get('aktivi/{assetId}/uredi', [AssetsController::class, 'edit']);
+        Route::put('aktivi/{assetId}', [AssetsController::class, 'update']);
+        Route::delete('aktivi/{assetId}', [AssetsController::class, 'delete']);
+
+        Route::get('sekcije', [SectionsController::class, 'index']);
+        Route::get('sekcije/kreiraj', [SectionsController::class, 'create']);
+        Route::post('sekcije', [SectionsController::class, 'store']);
+        Route::get('sekcije/{sectionId}/uredi', [SectionsController::class, 'edit']);
+        Route::put('sekcije/{sectionId}', [SectionsController::class, 'update']);
+        Route::delete('sekcije/{sectionId}', [SectionsController::class, 'delete']);
 
         Route::post('odjava', [LoginController::class, 'logout'])->name('logout');
     });

@@ -82,7 +82,7 @@
                                                 <tr>
                                                     <th>{{ $loop->index + 1}}</th>
                                                     <td><a href="{{ config('app.url') . '/admin/galerija/' . $direction->id }}">{{ $direction->naziv }}</a></td>
-                                                    <td>{{ count($direction->images()->get()) }}</td>
+                                                    <th>{{ count($direction->images()->get()) }}</th>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -92,6 +92,7 @@
                         </div>
                     </div>
                 </div>
+                {{ $directions->links('admin.pagination.pagination') }}
             </div>
         </div>
         <!--**********************************

@@ -97,12 +97,13 @@
                                             <label class="select2-label select2-container" for="id_label_multiple">
                                                 Dodaj osobe koje su povezane sa objavom <br>
                                                              
-                                                <select name="employees[]" class="select2-with-label-multiple js-states form-control input-default" id="id_label_multiple"
+                                                <select name="uposlenici[]" class="select2-with-label-multiple js-states form-control input-default" id="id_label_multiple"
                                                     multiple="multiple">
                                                     @foreach($employees as $employee)
                                                         <option value="{{ $employee->id }}">{{ $employee->ime_i_prezime }}</option>
                                                     @endforeach
                                                 </select>
+                                                @error('uposlenici') <span class="text-danger">{{ $message }}</span> @enderror
                                             </label>
                                         </div>
                                         

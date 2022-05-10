@@ -98,11 +98,13 @@
                                             <label class="select2-label select2-container" for="id_label_multiple">
                                                 Dodaj profesore koji su povezani sa objavom <br>
                                                              
-                                                <select class="select2-with-label-multiple js-states form-control input-default" id="id_label_multiple"
+                                                <select name="uposlenici[]" class="select2-with-label-multiple js-states form-control input-default" id="id_label_multiple"
                                                     multiple="multiple">
-                                                    <option value="AL">Alabama</option>
-                                                    <option value="WY">Wyoming</option>
+                                                    @foreach($employees as $employee)
+                                                        <option {{ $post->employees->where('id', $employee->id)->first() ? 'selected' : '' }} value="{{ $employee->id }}">{{ $employee->ime_i_prezime }}</option>
+                                                    @endforeach
                                                 </select>
+                                                @error('uposlenici') <span class="text-danger">{{ $message }}</span> @enderror
                                             </label>
                                         </div>
                                         

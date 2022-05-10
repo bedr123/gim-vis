@@ -50,12 +50,13 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Slider</h4>
+                            <h4>Slajdovi</h4>
                             <p class="mb-0">Uredi i dodaj nove slajdove</p>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <button class="btn badge-primary">Dodaj novi slide</button>
+                        <a href="{{ config('app.url') . '/admin/slajdovi/kreiraj' }}"><button type="button" class="btn btn-rounded btn-primary pr-4"><span
+                        class="btn-icon-left text-primary"><i class="fa fa-plus color-primary"></i></span>Dodaj novi slajd</button></a>
                     </div>
                 </div>
 
@@ -83,21 +84,21 @@
                                             @foreach($slides as $slide)
                                                 <tr>
                                                     <th>{{ $loop->index + 1 }}</th>
-                                                    <td>{{ $slide->naslov }}</td>
-                                                    <td>{{ $slide->opis }}</td>
-                                                    <td>{{ substr($slide->link, 0, 20) }}</td>
+                                                    <th>{{ $slide->naslov }}</th>
+                                                    <th>{{ $slide->opis }}</th>
+                                                    <th>{{ substr($slide->link, 0, 20) }}</th>
                                                     <td>
                                                         <img width="200px" height="120px" src="{{ $slide->slika }}" />
                                                     </td>
-                                                    <td>1</td>
-                                                    <td class="d-flex flex-column align-items-start">
+                                                    <th>1</th>
+                                                    <th class="d-flex flex-column align-items-start">
                                                         <a href="{{ config('app.url') . '/admin/slajdovi/' . $slide->id . '/uredi' }}"><button class="btn btn-success my-2">Uredi</button></a>
                                                         <form action="{{ config('app.url') . '/admin/slajdovi/' . $slide->id }}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger">Obriši</button>
                                                         </form>
-                                                    </td>
+                                                    </th>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -107,7 +108,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                {{ $slides->links('admin.pagination.pagination') }}
             </div>
         </div>
         <!--**********************************

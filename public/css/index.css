@@ -206,6 +206,19 @@ section {
     border-radius: 5px;
 }
 
+.nested-dropdown-item {
+    color: #000;
+}
+
+.nested-dropdown {
+    display: none;
+    padding: 1rem 0 0 0.5rem;
+}
+
+.nested-dropdown.active {
+    display: block;
+}
+
 .dropdown li:not(:last-child) {
     margin-bottom: 1.5rem;
 }
